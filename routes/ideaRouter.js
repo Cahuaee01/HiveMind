@@ -1,5 +1,5 @@
 import express from "express";
-import { TodoController } from "../controllers/IdeaController.js";
+import { IdeaController } from "../controllers/IdeaController.js";
 import { ensureUsersModifyOnlyOwnTodos } from "../middleware/authorization.js";
 
 export const ideaRouter = new express.Router();

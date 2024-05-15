@@ -10,20 +10,20 @@ export class IdeaController {
     })
   }
   
-  static async saveTodo(req){
-    let todo = Todo.build(req.body);
-    todo.UserUserName = req.username;
-    return todo.save();
+  static async saveIdea(req){
+    let idea = Idea.build(req.body);
+    idea.UserUserName = req.username;
+    return idea.save();
   }
 
   static async findById(req){
-    return Todo.findByPk(req.params.id);
+    return Idea.findByPk(req.params.id);
   }
 
   static async update(id, updated){
-    let todo = await Todo.findByPk(id);
-    todo.set(updated); //update using fields which were passed in request
-    return todo.save();
+    let idea = await Idea.findByPk(id);
+    idea.set(updated); //update using fields which were passed in request
+    return idea.save();
   }
 
   static async delete(req){

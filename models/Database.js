@@ -11,11 +11,11 @@ export const database = new Sequelize(process.env.DB_CONNECTION_URI, {
 createUserModel(database);
 createTodoModel(database);
 
-export const {User, Todo} = database.models;
+export const {User, Idea} = database.models;
 
 //associations configuration
-User.Todos = User.hasMany(Idea);
-Idea.User = Todo.belongsTo(User);
+User.Idea = User.hasMany(Idea);
+Idea.User = Idea.belongsTo(User);
 
 //synchronize schema (creates missing tables)
 database.sync().then( () => {

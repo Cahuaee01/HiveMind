@@ -1,4 +1,4 @@
-import { User, Todo } from "../models/Database.js";
+import { User, Idea } from "../models/Database.js";
 import Jwt from "jsonwebtoken";
 
 
@@ -44,9 +44,9 @@ export class AuthController {
     Jwt.verify(token, process.env.TOKEN_SECRET, callback);
   }
 
-  static async canUserModifyTodo(user, todoId){
-    const todo = await Todo.findByPk(todoId);
+  static async canUserModifyTodo(user, ideaId){
+    const idea = await Idea.findByPk(ideaId);
     //todo must exist and be associated with user
-    return todo && todo.UserUserName === user;
+    return idea && idea.UserUserName === user;
   }
 }
