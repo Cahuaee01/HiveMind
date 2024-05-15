@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cahuaee01/TecWeb.git"
+    "url": "git+https://github.com/Cahuaee01/HiveMind"
   },
   "keywords": [
     "hivemind"
@@ -16,7 +16,7 @@
   "author": "Emilia Napolano",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Cahuaee01/TecWeb/issues"
+    "url": "https://github.com/Cahuaee01/HiveMind/issues"
   },
-  "homepage": "https://github.com/Cahuaee01/TecWeb#readme"
+  "homepage": "https://github.com/Cahuaee01/HiveMind#readme"
 }
