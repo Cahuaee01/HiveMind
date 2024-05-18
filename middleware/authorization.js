@@ -21,10 +21,10 @@ export function enforceAuthentication(req, res, next){
   });
 }
 
-export async function ensureUsersModifyOnlyOwnTodos(req, res, next){
+export async function ensureUsersModifyOnlyOwnIdeas(req, res, next){
   const user = req.username;
-  const todoId = req.params.id;
-  const userHasPermission = await AuthController.canUserModifyTodo(user, todoId);
+  const ideaId = req.params.id;
+  const userHasPermission = await AuthController.canUserModifyIdea(user, ideaId);
   if(userHasPermission){
     next();
   } else {

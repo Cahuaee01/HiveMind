@@ -44,9 +44,9 @@ export class AuthController {
     Jwt.verify(token, process.env.TOKEN_SECRET, callback);
   }
 
-  static async canUserModifyTodo(user, ideaId){
+  static async canUserModifyIdea(user, ideaId){
     const idea = await Idea.findByPk(ideaId);
-    //todo must exist and be associated with user
+    //idea must exist and be associated with user
     return idea && idea.UserUserName === user;
   }
 }
