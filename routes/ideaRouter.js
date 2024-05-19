@@ -55,7 +55,8 @@ ideaRouter.put("/ideas/:id", ensureUsersModifyOnlyOwnIdeas, (req, res, next) => 
 });
 
 
-ideaRouter.post("ideas/:id/upvote", (req, res, next) => {
+ideaRouter.post("/ideas/:id/upvote", (req, res, next) => {
+  console.log("Buonasera");
   IdeaController.sendUpvote(req.params.id, req).then( result => {
     res.json(result);
   }).catch( err => {

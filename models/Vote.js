@@ -1,4 +1,5 @@
-import { DataTypes } from "sequelize";
+import { BOOLEAN, DataTypes } from "sequelize";
+import { toDefaultValue } from "sequelize/lib/utils";
 
 export function createModel(database){
   database.define('Vote', {
@@ -7,13 +8,9 @@ export function createModel(database){
       autoIncrement: true,
       primaryKey: true
     },
-    upvotes: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0
-    },
-    downvotes: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0
+    value: {
+      type: BOOLEAN,
+      defaultValue: false
     }
     //by default, Sequelize adds the createdAt and updatedAt fields to all models
   }, {

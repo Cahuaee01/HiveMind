@@ -23,7 +23,7 @@ Idea.Vote = Idea.hasMany(Vote);
 Vote.Idea = Vote.belongsTo(Idea);
 
 User.Vote = User.hasMany(Vote);
-Vote.User = Vote.hasOne(User);
+Vote.User = Vote.belongsTo(User);
 
 //synchronize schema (creates missing tables)
 database.sync().then( () => {

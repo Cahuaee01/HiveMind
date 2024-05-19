@@ -12,6 +12,14 @@ export function createModel(database){
     },
     description: {
         type: DataTypes.TEXT
+    },
+    upvotes: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
+    downvotes: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
     }
     //by default, Sequelize adds the createdAt and updatedAt fields to all models
   }, {
