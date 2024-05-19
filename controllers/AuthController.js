@@ -1,4 +1,5 @@
-import { User, Idea } from "../models/Database.js";
+import { User, Idea, Vote } from "../models/Database.js";
+import { Op } from "sequelize";
 import Jwt from "jsonwebtoken";
 
 
@@ -48,5 +49,23 @@ export class AuthController {
     const idea = await Idea.findByPk(ideaId);
     //idea must exist and be associated with user
     return idea && idea.UserUserName === user;
+  }
+
+  static async canUserVoteIdea(user, ideaId){
+    const idea = await Idea.findByPk(ideaId);
+    if (!idea) {
+      throw new Error("Idea not found");
+    }
+
+    const vote = await Vote.findOne({
+      where: {
+        [Op.and]: [
+          { UserUserName: user },
+          { IdeaId: ideaId }
+        ]
+      }
+    });
+
+    return vote === null;
   }
 }

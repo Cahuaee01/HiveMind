@@ -1,6 +1,7 @@
 import express from "express";
 import { IdeaController } from "../controllers/IdeaController.js";
 import { ensureUsersModifyOnlyOwnIdeas } from "../middleware/authorization.js";
+import { ensureUsersVoteOnlyOneTime } from "../middleware/onevote.js";
 
 export const ideaRouter = new express.Router();
 
@@ -55,9 +56,17 @@ ideaRouter.put("/ideas/:id", ensureUsersModifyOnlyOwnIdeas, (req, res, next) => 
 });
 
 
-ideaRouter.post("/ideas/:id/upvote", (req, res, next) => {
-  console.log("Buonasera");
+ideaRouter.post("/ideas/:id/upvote", ensureUsersVoteOnlyOneTime, (req, res, next) => {
   IdeaController.sendUpvote(req.params.id, req).then( result => {
+    res.json(result);
+  }).catch( err => {
+    next({status: 404, message: "Idea not found"});
+  })
+});
+
+
+ideaRouter.post("/ideas/:id/downvote", ensureUsersVoteOnlyOneTime, (req, res, next) => {
+  IdeaController.sendDownvote(req.params.id, req).then( result => {
     res.json(result);
   }).catch( err => {
     next({status: 404, message: "Idea not found"});

@@ -41,9 +41,29 @@ export class IdeaController {
     let vote = Vote.build();
     vote.UserUserName = judgeUser;
     vote.IdeaId = id;
-
     vote.value = true;
-    vote.save();
-    return { message: 'Upvote added successfully', vote };
+    await vote.save();
+
+    idea.upvotes++;
+    idea.save();
+
+    return { message: 'Upvote added successfully', vote, idea };
   }
+
+  static async sendDownvote(id, req){
+    let idea = await Idea.findByPk(id);
+    let judgeUser = req.username;
+    
+    let vote = Vote.build();
+    vote.UserUserName = judgeUser;
+    vote.IdeaId = id;
+    vote.value = false;
+    await vote.save();
+
+    idea.downvotes++;
+    idea.save();
+    
+    return { message: 'Downvote added successfully', vote, idea };
+  }
+
 }

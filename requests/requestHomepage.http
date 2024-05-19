@@ -1,9 +1,2 @@
-POST http://localhost:3000/ideas
-Content-Type: application/json 
+GET http://localhost:3000/homepage
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZW1pbGlhIiwiaWF0IjoxNzE2MDUxODczLCJleHAiOjE3MTYxMzgyNzN9.-uYMdJO42whbxJlirRxBDyizsZRfKEa7XwiAs7ZFfv0
-
-{
-  "title": "Terza idea",
-  "description": "molto bellaaaaa"
-}
-
