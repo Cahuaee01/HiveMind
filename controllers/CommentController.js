@@ -6,15 +6,16 @@ export class CommentController {
         return Comment.findAll({
           where: {
             IdeaId: ideaId
-          }
+          },
+          order: [['createdAt', 'ASC']]
         })
-      }
+      };
   
     static async saveComment(ideaId, req){
         let comment = Comment.build(req.body);
         comment.IdeaId = ideaId;
         comment.owner = req.username;
         return comment.save();
-    }
+    };
 
 }
