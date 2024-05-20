@@ -2,6 +2,7 @@ import { Sequelize } from "sequelize";
 import { createModel as createUserModel } from "./User.js";
 import { createModel as createIdeaModel } from "./Idea.js";
 import { createModel as createVoteModel } from "./Vote.js";
+import { createModel as createCommentModel } from "./Comment.js";
 
 import 'dotenv/config.js'; //read .env file and make it available in process.env
 
@@ -12,8 +13,9 @@ export const database = new Sequelize(process.env.DB_CONNECTION_URI, {
 createUserModel(database);
 createIdeaModel(database);
 createVoteModel(database);
+createCommentModel(database);
 
-export const {User, Idea, Vote} = database.models;
+export const {User, Idea, Vote, Comment} = database.models;
 
 //associations configuration
 User.Idea = User.hasMany(Idea);
@@ -24,6 +26,9 @@ Vote.Idea = Vote.belongsTo(Idea);
 
 User.Vote = User.hasMany(Vote);
 Vote.User = Vote.belongsTo(User);
+
+Idea.Comment = Idea.hasMany(Comment);
+Comment.Idea = Comment.belongsTo(Idea);
 
 //synchronize schema (creates missing tables)
 database.sync().then( () => {

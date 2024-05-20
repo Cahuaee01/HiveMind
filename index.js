@@ -8,6 +8,7 @@ import { ideaRouter } from "./routes/ideaRouter.js";
 import { authenticationRouter } from "./routes/authenticationRouter.js";
 import { enforceAuthentication } from "./middleware/authorization.js";
 import { homepageRouter } from "./routes/homepageRouter.js";
+import { commentRouter } from "./routes/commentRouter.js";
 
 const app = express();
 const PORT = 3000;
@@ -50,5 +51,6 @@ app.use(authenticationRouter);
 app.use(enforceAuthentication);
 app.use(ideaRouter);
 app.use(homepageRouter);
+app.use(commentRouter);
 
 app.listen(PORT);

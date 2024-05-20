@@ -7,7 +7,7 @@ export class IdeaController {
       where: {
         UserUserName: req.username
       }
-    })
+    }) 
   }
   
   static async saveIdea(req){

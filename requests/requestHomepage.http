@@ -1,2 +1,2 @@
-GET http://localhost:3000/homepage
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZW1pbGlhIiwiaWF0IjoxNzE2MDUxODczLCJleHAiOjE3MTYxMzgyNzN9.-uYMdJO42whbxJlirRxBDyizsZRfKEa7XwiAs7ZFfv0
+GET http://localhost:3000/homepage/mainstream
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZW1pbGlhIiwiaWF0IjoxNzE2MTk3MjY2LCJleHAiOjE3MTYyODM2NjZ9.An1LvxiBu3-7OSlYadxvZbyoXo9f6nKPcC8vSUTlBRA

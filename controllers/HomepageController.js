@@ -20,7 +20,7 @@ export class HomepageController {
         });
     }    
 
-    //if downvotes are bigger than 10% of upvotes the idea is declared unpopular
+    //if the balance upvotes/downvotes is low the idea is declared unpopular
     static async displayTenUnpopular(req) {
         return Idea.findAll({
             attributes: [
@@ -28,16 +28,15 @@ export class HomepageController {
                 'title',  
                 [sequelize.fn('SUM', sequelize.col('upvotes')), 'total_upvotes'],
                 [sequelize.fn('SUM', sequelize.col('downvotes')), 'total_downvotes'],
-                [sequelize.literal('SUM(upvotes + downvotes)'), 'total_votes']
+                [sequelize.literal('SUM(upvotes - downvotes)'), 'total_votes']
             ],
             group: ['Idea.id'],
-            having: sequelize.literal('SUM(downvotes) > 1.1 * SUM(upvotes)'),
-            order: sequelize.literal('total_votes DESC'),
+            order: sequelize.literal('total_votes ASC'),
             limit: 10
         });
     }    
 
-    //if upvotes are bigger than 10% of downvotes the idea is declared mainstream
+    //if the balance upvotes/downvotes is high the idea is declared mainstream
     static async displayTenMainstream(req) {
         return Idea.findAll({
             attributes: [
@@ -45,10 +44,9 @@ export class HomepageController {
                 'title',  
                 [sequelize.fn('SUM', sequelize.col('upvotes')), 'total_upvotes'],
                 [sequelize.fn('SUM', sequelize.col('downvotes')), 'total_downvotes'],
-                [sequelize.literal('SUM(upvotes + downvotes)'), 'total_votes']
+                [sequelize.literal('SUM(upvotes - downvotes)'), 'total_votes']
             ],
             group: ['Idea.id'],
-            having: sequelize.literal('SUM(upvotes) > 1.1 * SUM(downvotes)'),
             order: sequelize.literal('total_votes DESC'),
             limit: 10
         });
