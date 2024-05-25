@@ -4,7 +4,7 @@ import { sequelize } from '../public/sequelize.js';
 export class HomepageController {
 
     //if upvotes and downvotes have 10 votes of range between them then the idea is considered controversial
-    static async displayTenControversial(req) {
+    static async displayTenControversial(pageId,req) {
         return Idea.findAll({
             attributes: [
                 'id',
@@ -16,12 +16,13 @@ export class HomepageController {
             group: ['Idea.id'],
             having: sequelize.literal('ABS(SUM(upvotes) - SUM(downvotes)) < 10'),
             order: sequelize.literal('total_votes DESC'),
-            limit: 10
+            limit: 10,
+            offset: (pageId - 1) * 10
         });
     }    
 
     //if the balance upvotes/downvotes is low the idea is declared unpopular
-    static async displayTenUnpopular(req) {
+    static async displayTenUnpopular(pageId,req) {
         return Idea.findAll({
             attributes: [
                 'id',
@@ -32,12 +33,13 @@ export class HomepageController {
             ],
             group: ['Idea.id'],
             order: sequelize.literal('total_votes ASC'),
-            limit: 10
+            limit: 10,
+            offset: (pageId - 1) * 10
         });
     }    
 
     //if the balance upvotes/downvotes is high the idea is declared mainstream
-    static async displayTenMainstream(req) {
+    static async displayTenMainstream(pageId,req) {
         return Idea.findAll({
             attributes: [
                 'id',
@@ -48,7 +50,8 @@ export class HomepageController {
             ],
             group: ['Idea.id'],
             order: sequelize.literal('total_votes DESC'),
-            limit: 10
+            limit: 10,
+            offset: (pageId - 1) * 10
         });
     }  
 

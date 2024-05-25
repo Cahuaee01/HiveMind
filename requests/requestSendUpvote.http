@@ -1,6 +1,6 @@
-POST http://localhost:3000/ideas/2/downvote
+POST http://localhost:3000/ideas/2/upvote
 Content-Type: application/json 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZGF2aWRlIiwiaWF0IjoxNzE2MTE0Nzg2LCJleHAiOjE3MTYyMDExODZ9.PL92ZLHSz7Gn6wEBvt2JUHtSWUl6N7sFAU2uueBO5DM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZW1pbGlhIiwiaWF0IjoxNzE2NjQ3MDYzLCJleHAiOjE3MTY3MzM0NjN9.K9P6_YpIzxj5riTifgtdabBVa7aZZVeVPAwBUSQs3rY
 
 {
   
