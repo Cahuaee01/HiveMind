@@ -51,10 +51,11 @@ export class IdeaPageComponent {
       this.toastr.error("The data you provided is invalid!", "Oops! Invalid data!");
     } else {
       this.restService.createIdea({
-        idea: this.newIdeaForm.value.idea as string
+        title: this.newIdeaForm.value.idea as string,
+        description: this.newIdeaForm.value.idea as string
       }).subscribe({
         next: (idea) => {
-          this.toastr.success(`Idea item: ${idea.idea}`, "Idea saved correctly!");
+          this.toastr.success(`Idea item: ${idea.title}`, "Idea saved correctly!");
           this.createIdeaSubmitted = false;
           this.newIdeaForm.setValue({idea: ""});
         },

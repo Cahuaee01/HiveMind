@@ -28,7 +28,20 @@ export class RestBackendService {
     return this.http.post(url, signupRequest, this.httpOptions);
   }
 
-  getMyIdeas() {
+  getHomepage(typeofHomepage: number, numberofPage: number){
+    if(typeofHomepage === 0){
+      const url = `${this.url}/homepage/controversial/${numberofPage}`; 
+      return this.http.get(url, this.httpOptions);
+    }else if(typeofHomepage === 1){
+      const url = `${this.url}/homepage/mainstream/${numberofPage}`; 
+      return this.http.get(url, this.httpOptions);
+    }else{
+      const url = `${this.url}/homepage/unpopular/${numberofPage}`; 
+      return this.http.get(url, this.httpOptions);
+    }
+  }
+
+  getMyIdeas(){
     const url = `${this.url}/ideas`; 
     return this.http.get<IdeaItem[]>(url, this.httpOptions);
   }

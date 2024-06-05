@@ -1,6 +1,7 @@
 export interface IdeaItem {
     id?: number; 
-    idea: string; 
+    title: string; 
+    description: string;
     upvotes?: number; 
     downvotes?: number;
     UserUserName?: string; 

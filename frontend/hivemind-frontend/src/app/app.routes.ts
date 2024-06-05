@@ -3,7 +3,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { IdeaPageComponent } from './idea-page/idea-page.component';
-import { IdeaDetailComponent } from './idea-detail/idea-detail.component';
 import { authGuard } from './_guards/auth.guard';
 import { LogoutComponent } from './logout/logout.component';
 
@@ -28,11 +27,6 @@ export const routes: Routes = [
     path: "ideas",
     component: IdeaPageComponent,
     title: "My Ideas List | Hivemind Angular App",
-    canActivate: [authGuard]
-  }, {
-    path: "idea/:id",
-    component: IdeaDetailComponent,
-    title: "Idea Detail | Hivemind Angular App",
     canActivate: [authGuard]
   }, {
     path: "",

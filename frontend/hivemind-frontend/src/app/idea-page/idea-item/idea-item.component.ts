@@ -14,13 +14,11 @@ import { IdeaItem } from '../../_services/rest-backend/idea-item.type';
 export class IdeaItemComponent {
   @Input({ required: true}) ideaItem: IdeaItem; //set "strictPropertyInitialization": false in tsconfig
   @Output() delete: EventEmitter<number | undefined> = new EventEmitter();
-  editLink = "";
   restBackend = inject(RestBackendService);
   toastr = inject(ToastrService);
 
 
   ngOnInit(){
-    this.editLink = "/ideas/"+this.ideaItem?.id;
   }
 
   handleDelete(){
@@ -34,7 +32,7 @@ export class IdeaItemComponent {
             this.toastr.error("Error when deleting the idea");
           },
           complete: () => {
-            this.toastr.success(`Idea item "${this.ideaItem?.idea}" deleted`, `Idea deleted`);
+            this.toastr.success(`Idea item "${this.ideaItem?.title}" deleted`, `Idea deleted`);
             this.delete.emit(this.ideaItem?.id);
           }
         })

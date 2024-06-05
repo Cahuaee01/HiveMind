@@ -31,7 +31,7 @@ export const authenticationRouter = express.Router();
  *          description: Invalid credentials
  */
 
-authenticationRouter.post("/auth", async (req, res) => {
+authenticationRouter.post("/login", async (req, res) => {
   let isAuthenticated = await AuthController.checkCredentials(req, res);
   if(isAuthenticated){
     res.json(AuthController.issueToken(req.body.usr));

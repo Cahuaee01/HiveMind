@@ -1,9 +1,7 @@
-<li class="flex items-center flex-wrap content-between w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-    <div class="inline-flex rounded-md shadow-sm text-xs" role="group">
-      <button [routerLink]="editLink" type="button" class="px-4 py-1  font-medium text-gray-900 bg-transparent border border-gray-900 rounded-s-lg hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-        Edit
-      </button>
-      <button (click)="handleDelete()" type="button" class="px-4 py-1 font-medium text-gray-900 bg-transparent border border-gray-900 rounded-e-lg hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+<li class="flex items-center flex-wrap content-between w-full px-4 py-2 border-b border-gray-200 rounded-t-lg">
+    <span class="flex-grow">{{ideaItem.title}}</span>
+    <div class="inline-flex rounded-md shadow-sm text-xs">  
+      <button (click)="handleDelete()" type="button" class="px-4 py-1 font-medium text-gray-900 bg-transparent border border-gray-900 hover:bg-red-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-red-900 focus:text-white">
         Delete
       </button>
     </div>
