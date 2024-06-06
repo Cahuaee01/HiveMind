@@ -25,3 +25,23 @@ a.link {
 .form-error{
   @apply text-red-600;
 }
+
+.toast-top-right {
+  top: 30px;
+  right: 30px;
+  margin-top: 100px;
+}
+
+@media (max-width: 575.98px) {
+  .toast-top-right {
+    top: unset;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+  .toast-container.toast-top-right .toast {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
