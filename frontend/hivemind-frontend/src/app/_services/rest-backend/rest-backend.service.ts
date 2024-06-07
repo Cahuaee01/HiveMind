@@ -77,4 +77,14 @@ export class RestBackendService {
     return this.http.post(url, this.httpOptions);
   }
 
+  getComments(id: number) {
+    const url = `${this.url}/ideas/${id}/comments`; 
+    return this.http.get(url, this.httpOptions);
+  }
+
+  postComment(id: number, comment: string) {
+    const url = `${this.url}/ideas/${id}/comments`; 
+    return this.http.post(url, {comment: comment}, this.httpOptions);
+  }
+
 }

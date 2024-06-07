@@ -18,7 +18,6 @@ export class AllIdeaItemsComponent {
   restBackend = inject(RestBackendService);
   toastr = inject(ToastrService);
 
-
   ngOnInit(){
   }
 

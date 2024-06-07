@@ -5,11 +5,12 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../_services/auth/auth.service';
 import { IdeaItem } from '../_services/rest-backend/idea-item.type';
 import { AllIdeaItemsComponent } from './all-idea-items/all-idea-items.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, AllIdeaItemsComponent],
+  imports: [RouterLink, RouterLinkActive, AllIdeaItemsComponent, CommonModule],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })

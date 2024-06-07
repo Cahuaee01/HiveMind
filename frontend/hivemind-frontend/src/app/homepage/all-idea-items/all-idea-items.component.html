@@ -1,30 +1,34 @@
-<li class="flex items-center flex-wrap content-between w-full px-10 py-5 border-b border-gray-200 rounded-t-lg mb-5">
+<li routerLink="/idea-details/${{ideaItem.id}}" class="flex items-center flex-wrap content-between w-full px-10 py-5 border-b border-gray-200 rounded-t-lg mb-5">
   <div class="overflow-x-auto w-full">
     <table class="min-w-full divide-y divide-gray-200">
       <tbody class="bg-white divide-y divide-gray-200">
         <tr>
-          <td class="px-6 py-4 whitespace-nowrap">
+          <td class="px-6 py-4 whitespace-nowrap" colspan="2">
+            <div class="text-lg font-bold text-teal-600">&#64;{{ideaItem.UserUserName}}</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="px-6 py-4 whitespace-nowrap" colspan="2">
             <div class="text-sm font-medium text-gray-900">{{ideaItem.title}}</div>
           </td>
         </tr>
         <tr>
-          <td class="px-6 py-4 whitespace-nowrap">
+          <td class="px-6 py-4 whitespace-nowrap" colspan="2">
             <div class="text-sm text-gray-500">{{ideaItem.description}}</div>
           </td>
-          <td class="px-6 py-4 whitespace-nowrap"></td>
         </tr>
         <tr>
-          <td class="px-6 py-6 whitespace-nowrap" colspan="2">
-            <div class="flex space-x-2 justify-center">
-              <button (click)="handleUpvote()" type="button" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
-                <img src="upvote.jpg" alt="Upvote Image" class="w-6 h-7">
-                {{ideaItem.upvotes}}
-              </button>
-              <button (click)="handleDownvote()" type="button" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
-                <img src="downvote.jpg" alt="Downvote Image" class="w-6 h-7">
-                {{ideaItem.downvotes}}
-              </button>
-            </div>
+          <td class="px-6 py-6 whitespace-nowrap">
+            <button (click)="handleUpvote()" type="button" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
+              <img src="upvote.jpg" alt="Upvote Image" class="w-6 h-7">
+              <span class="ml-2">{{ideaItem.upvotes}}</span>
+            </button>
+          </td>
+          <td class="px-6 py-6 whitespace-nowrap text-right">
+            <button (click)="handleDownvote()" type="button" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
+              <img src="downvote.jpg" alt="Downvote Image" class="w-6 h-7">
+              <span class="ml-2">{{ideaItem.downvotes}}</span>
+            </button>
           </td>
         </tr>
       </tbody>

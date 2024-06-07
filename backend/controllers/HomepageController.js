@@ -8,7 +8,11 @@ export class HomepageController {
         return Idea.findAll({
             attributes: [
                 'id',
-                'title',  
+                'title',
+                'description',  
+                'upvotes',
+                'downvotes',
+                'UserUserName',
                 [sequelize.fn('SUM', sequelize.col('upvotes')), 'total_upvotes'],
                 [sequelize.fn('SUM', sequelize.col('downvotes')), 'total_downvotes'],
                 [sequelize.literal('SUM(upvotes + downvotes)'), 'total_votes']
@@ -27,6 +31,10 @@ export class HomepageController {
             attributes: [
                 'id',
                 'title',  
+                'description',
+                'upvotes',
+                'downvotes',
+                'UserUserName',
                 [sequelize.fn('SUM', sequelize.col('upvotes')), 'total_upvotes'],
                 [sequelize.fn('SUM', sequelize.col('downvotes')), 'total_downvotes'],
                 [sequelize.literal('SUM(upvotes - downvotes)'), 'total_votes']
@@ -44,6 +52,10 @@ export class HomepageController {
             attributes: [
                 'id',
                 'title',  
+                'description',
+                'upvotes',
+                'downvotes',
+                'UserUserName',
                 [sequelize.fn('SUM', sequelize.col('upvotes')), 'total_upvotes'],
                 [sequelize.fn('SUM', sequelize.col('downvotes')), 'total_downvotes'],
                 [sequelize.literal('SUM(upvotes - downvotes)'), 'total_votes']
