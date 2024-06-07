@@ -5,15 +5,14 @@ import { ToastrService } from 'ngx-toastr';
 import { IdeaItem } from '../../_services/rest-backend/idea-item.type';
 
 @Component({
-  selector: 'app-idea-item',
+  selector: 'app-all-idea-items',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './idea-item.component.html',
-  styleUrl: './idea-item.component.scss'
+  templateUrl: './all-idea-items.component.html',
+  styleUrl: './all-idea-items.component.scss'
 })
-export class IdeaItemComponent {
-  @Input({ required: true}) ideaItem: IdeaItem; //set "strictPropertyInitialization": false in tsconfig
-  @Output() delete: EventEmitter<number | undefined> = new EventEmitter();
+export class AllIdeaItemsComponent {
+  @Input({ required: true}) ideaItem : IdeaItem; //set "strictPropertyInitialization": false in tsconfig
   @Output() upvote: EventEmitter<number | undefined> = new EventEmitter();
   @Output() downvote: EventEmitter<number | undefined> = new EventEmitter();
   restBackend = inject(RestBackendService);
@@ -21,24 +20,6 @@ export class IdeaItemComponent {
 
 
   ngOnInit(){
-  }
-
-  handleDelete(){
-    if(this.ideaItem !== null){
-      this.restBackend.delete(this.ideaItem)
-        .subscribe({
-          next: (data) => {
-            console.log(data);
-          },
-          error: (err) => {
-            this.toastr.error("Error when deleting the idea");
-          },
-          complete: () => {
-            this.toastr.success(`Idea item "${this.ideaItem?.title}" deleted`, `Idea deleted`);
-            this.delete.emit(this.ideaItem?.id);
-          }
-        })
-    }
   }
 
   handleUpvote(){

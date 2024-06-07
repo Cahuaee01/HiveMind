@@ -27,9 +27,11 @@
         </div>
     </div>
     
-    <div>
-        {{homepageData}}
-    </div>
+    @for(item of homepageData; track item.id){
+        <app-all-idea-items [ideaItem]="homepageData[item.id!]" (upvote)="handleUpvote($event!)" (downvote)="handleDownvote($event!)"/>
+    } @empty {
+        <li class="flex items-center flex-wrap content-between w-full px-4 py-2 border-b border-gray-200 rounded-t-lg">No idea items to show.</li>
+    }      
     
     <div class="flex justify-between mt-4">
     <button (click)="prevPage()"

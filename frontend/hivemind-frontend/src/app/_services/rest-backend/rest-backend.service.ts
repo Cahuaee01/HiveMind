@@ -67,4 +67,14 @@ export class RestBackendService {
     return this.http.delete(url, this.httpOptions);
   }
 
+  upvote(id: number) {
+    const url = `${this.url}/ideas/${id}/upvote`; 
+    return this.http.post(url, this.httpOptions);
+  }
+
+  downvote(id: number) {
+    const url = `${this.url}/ideas/${id}/downvote`; 
+    return this.http.post(url, this.httpOptions);
+  }
+
 }

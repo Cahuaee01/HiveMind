@@ -21,7 +21,8 @@ export class IdeaPageComponent {
   ideas: IdeaItem[] = []; //array of IdeaItem
 
   newIdeaForm = new FormGroup({
-    idea: new FormControl('', [Validators.required])
+    title: new FormControl('', [Validators.required]),
+    description: new FormControl('', [Validators.required])
   })
   
   ngOnInit() {
@@ -51,20 +52,21 @@ export class IdeaPageComponent {
       this.toastr.error("The data you provided is invalid!", "Oops! Invalid data!");
     } else {
       this.restService.createIdea({
-        title: this.newIdeaForm.value.idea as string,
-        description: this.newIdeaForm.value.idea as string
+        title: this.newIdeaForm.value.title as string,
+        description: this.newIdeaForm.value.description as string
       }).subscribe({
         next: (idea) => {
           this.toastr.success(`Idea item: ${idea.title}`, "Idea saved correctly!");
           this.createIdeaSubmitted = false;
-          this.newIdeaForm.setValue({idea: ""});
+          this.newIdeaForm.setValue({title: "", description:""});
         },
         error: (err) => {
           this.toastr.error("Could not save the idea item.", "Oops! Something went wrong.");
         },
         complete: () => {
           this.fetchIdeas();
-          this.newIdeaForm.value.idea = ''; //reset input field
+          this.newIdeaForm.value.title = ''; //reset input field
+          this.newIdeaForm.value.description = ''; //reset input field
         }
       })
     }
