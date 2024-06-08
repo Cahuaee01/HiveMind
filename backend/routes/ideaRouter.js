@@ -21,7 +21,7 @@ ideaRouter.post("/ideas", (req, res, next) => {
   });
 });
 
-ideaRouter.get("/ideas/:id", ensureUsersModifyOnlyOwnIdeas, (req, res, next) => {
+ideaRouter.get("/ideas/:id", (req, res, next) => {
     IdeaController.findById(req).then( (item) => {
     if(item)
       res.json(item);
