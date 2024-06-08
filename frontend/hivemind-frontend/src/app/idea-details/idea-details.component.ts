@@ -118,7 +118,7 @@ export class IdeaDetailsComponent {
   }
 
   loadComments(){
-    this.restService.getComments(this.idea.id!).subscribe({
+    this.restService.getComments(this.id).subscribe({
       next: (data) => {
         console.log(data);
         this.comments = data as CommentItem[];

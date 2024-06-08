@@ -4,6 +4,11 @@
       <table class="min-w-full divide-y divide-gray-200">
         <tbody class="bg-white divide-y divide-gray-200">
           <tr>
+            <td class="px-6 py-4 whitespace-nowrap" colspan="2">
+              <div class="text-lg font-bold text-teal-600">&#64;{{idea.UserUserName}}</div>
+            </td>
+          </tr>
+          <tr>
             <td class="px-6 py-4 whitespace-nowrap">
               <div class="text-sm font-medium text-gray-900">{{idea.title}}</div>
             </td>
@@ -47,7 +52,7 @@
     </form>
     <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg">
       @for(item of comments; track item.id){
-        <app-comment [comment]="item" [idea]="idea"/>
+        <app-comment [comment]="item"/>
       } @empty {
         <li class="flex items-center flex-wrap content-between w-full px-4 py-2 border-b border-gray-200 rounded-t-lg">No Comments to show.</li>
       }

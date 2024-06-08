@@ -84,7 +84,7 @@ export class RestBackendService {
 
   postComment(id: number, comment: string) {
     const url = `${this.url}/ideas/${id}/comments`; 
-    return this.http.post(url, {comment: comment}, this.httpOptions);
+    return this.http.post(url, {content: comment}, this.httpOptions);
   }
 
 }

@@ -14,13 +14,13 @@ import { Router } from '@angular/router';
   styleUrl: './comment.component.scss'
 })
 export class CommentComponent {
-  @Input({required : true}) idea: IdeaItem;
   @Input({required : true}) comment: CommentItem;
   restService = inject(RestBackendService);
   toastr = inject(ToastrService);
   router = inject(Router);
 
   ngOnInit(){
+    this.toastr.info("Loading comments");
   }
 }
 

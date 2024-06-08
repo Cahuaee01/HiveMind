@@ -1,5 +1,11 @@
-<section>
+<ul class="space-y-4">
     <li>
-        {{comment.content}}
+        <div class="comment bg-white shadow rounded-lg p-4">
+            <div class="comment-header flex items-center justify-between mb-2">
+                <div class="comment-author text-lg font-bold text-teal-600">&#64;{{ comment.owner }}</div>
+                <div class="comment-date text-xs text-gray-500 truncate w-20">{{ comment.createdAt }}</div>
+            </div>
+            <div class="comment-content text-gray-700">{{ comment.content }}</div>
+        </div>
     </li>
-</section>
+</ul>
