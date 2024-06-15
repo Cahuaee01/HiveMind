@@ -3,11 +3,12 @@ import { RouterLink } from '@angular/router';
 import { RestBackendService } from '../../_services/rest-backend/rest-backend.service';
 import { ToastrService } from 'ngx-toastr';
 import { IdeaItem } from '../../_services/rest-backend/idea-item.type';
+import { MarkdownComponent } from 'ngx-markdown';
 
 @Component({
   selector: 'app-idea-item',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, MarkdownComponent],
   templateUrl: './idea-item.component.html',
   styleUrl: './idea-item.component.scss'
 })

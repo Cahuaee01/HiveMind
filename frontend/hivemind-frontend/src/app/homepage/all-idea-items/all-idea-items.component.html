@@ -1,20 +1,20 @@
-<li routerLink="/idea-details/${{ideaItem.id}}" class="flex items-center flex-wrap content-between w-full px-10 py-5 border-b border-gray-200 rounded-t-lg mb-5">
+<li class="flex items-center flex-wrap content-between w-full px-10 py-5 border-b border-gray-200 rounded-t-lg mb-5">
   <div class="overflow-x-auto w-full">
     <table class="min-w-full divide-y divide-gray-200">
       <tbody class="bg-white divide-y divide-gray-200">
         <tr>
           <td class="px-6 py-4 whitespace-nowrap" colspan="2">
-            <div class="text-lg font-bold text-teal-600">&#64;{{ideaItem.UserUserName}}</div>
+            <div routerLink="/idea-details/${{ideaItem.id}}" class="text-lg font-bold text-teal-600">&#64;{{ideaItem.UserUserName}}</div>
           </td>
         </tr>
-        <tr>
+        <tr routerLink="/idea-details/${{ideaItem.id}}">
           <td class="px-6 py-4 whitespace-nowrap" colspan="2">
-            <div class="text-sm font-medium text-gray-900">{{ideaItem.title}}</div>
+            <markdown [data]="ideaItem.title" class="text-sm font-medium text-gray-900"></markdown>
           </td>
         </tr>
-        <tr>
+        <tr routerLink="/idea-details/${{ideaItem.id}}">
           <td class="px-6 py-4 whitespace-nowrap" colspan="2">
-            <div class="text-sm text-gray-500">{{ideaItem.description}}</div>
+            <markdown [data]="ideaItem.description" class="text-sm text-gray-500"></markdown>
           </td>
         </tr>
         <tr>

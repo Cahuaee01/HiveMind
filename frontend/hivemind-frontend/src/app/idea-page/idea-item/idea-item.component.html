@@ -4,7 +4,9 @@
       <tbody class="bg-white divide-y divide-gray-200">
         <tr>
           <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm font-medium text-gray-900">{{ideaItem.title}}</div>
+            <div>
+              <markdown [data]="ideaItem.title" class="text-sm font-medium text-gray-900"></markdown>
+            </div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap text-right">
             <div class="inline-flex rounded-md shadow-sm text-xs">
@@ -16,7 +18,9 @@
         </tr>
         <tr>
           <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-500">{{ideaItem.description}}</div>
+            <div>
+              <markdown [data]="ideaItem.description" class="text-sm text-gray-500"></markdown>
+            </div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap"></td>
         </tr>

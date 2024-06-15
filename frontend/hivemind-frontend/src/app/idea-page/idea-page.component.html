@@ -5,9 +5,13 @@
   <form [formGroup]="newIdeaForm" (ngSubmit)="handleIdeaSubmit()" class="space-y-4">
     <div class="flex flex-col sm:flex-row sm:items-center w-full">
       <input type="text" formControlName="title" placeholder="Insert a new idea here" class="flex-grow p-2 mb-2 sm:mb-0 sm:mr-2 w-full bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500">
+      <markdown [data]="newIdeaForm.controls.title.value" class="flex-grow p-2 mb-2 sm:mb-0 sm:mr-2 w-full bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500">
+      </markdown>
     </div>
     <div class="flex flex-col sm:flex-row sm:items-center w-full">
-      <input type="text" formControlName="description" placeholder="Insert description" class="flex-grow p-2 mb-2 sm:mb-0 sm:mr-2 w-full bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500">
+      <textarea type="text" formControlName="description" placeholder="Insert description" class="flex-grow p-2 mb-2 sm:mb-0 sm:mr-2 w-full bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500"></textarea>
+      <markdown [data]="newIdeaForm.controls.description.value" class="flex-grow p-2 mb-2 sm:mb-0 sm:mr-2 w-full bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500">
+      </markdown>
     </div>
     <div class="flex justify-end w-full">
       <button type="submit" class="p-2 w-full sm:w-auto mt-2 sm:mt-0 text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:ring-teal-500 font-medium rounded-lg text-sm focus:outline-none mb-5">Share your Idea</button>

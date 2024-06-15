@@ -5,11 +5,13 @@ import { Router } from '@angular/router';
 import { IdeaItemComponent } from './idea-item/idea-item.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IdeaItem } from '../_services/rest-backend/idea-item.type';
+import { MarkdownComponent } from 'ngx-markdown';
+import { MarkdownModule } from 'ngx-markdown';
 
 @Component({
   selector: 'app-idea-page',
   standalone: true,
-  imports: [IdeaItemComponent, ReactiveFormsModule],
+  imports: [IdeaItemComponent, ReactiveFormsModule, MarkdownComponent],
   templateUrl: './idea-page.component.html',
   styleUrl: './idea-page.component.scss'
 })

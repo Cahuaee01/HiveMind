@@ -7,12 +7,13 @@ import { CommentItem } from '../_services/rest-backend/comment-item.type';
 import { IdeaItem } from '../_services/rest-backend/idea-item.type';
 import { CommentComponent } from './comment/comment.component';
 import { ActivatedRoute } from '@angular/router';
+import { MarkdownComponent } from 'ngx-markdown';
 
 
 @Component({
   selector: 'app-idea-details',
   standalone: true,
-  imports: [CommentComponent, ReactiveFormsModule],
+  imports: [CommentComponent, ReactiveFormsModule, MarkdownComponent],
   templateUrl: './idea-details.component.html',
   styleUrl: './idea-details.component.scss'
 })

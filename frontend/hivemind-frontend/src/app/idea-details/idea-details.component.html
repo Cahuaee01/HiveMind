@@ -10,12 +10,12 @@
           </tr>
           <tr>
             <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm font-medium text-gray-900">{{idea.title}}</div>
+              <markdown [data]="idea.title" class="text-sm font-medium text-gray-900"></markdown>
             </td>
           </tr>
           <tr>
             <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-500">{{idea.description}}</div>
+              <markdown [data]="idea.description" class="text-sm text-gray-500"></markdown>
             </td>
             <td class="px-6 py-4 whitespace-nowrap"></td>
           </tr>
