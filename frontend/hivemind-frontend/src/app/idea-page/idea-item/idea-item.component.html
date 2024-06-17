@@ -3,7 +3,7 @@
     <table class="min-w-full divide-y divide-gray-200">
       <tbody class="bg-white divide-y divide-gray-200">
         <tr>
-          <td class="px-6 py-4 whitespace-nowrap">
+          <td class="px-6 py-4 whitespace-nowrap" routerLink="/idea-details/${{ideaItem.id}}">
             <div>
               <markdown [data]="ideaItem.title" class="text-sm font-medium text-gray-900"></markdown>
             </div>
@@ -17,7 +17,7 @@
           </td>
         </tr>
         <tr>
-          <td class="px-6 py-4 whitespace-nowrap">
+          <td class="px-6 py-4 whitespace-nowrap" routerLink="/idea-details/${{ideaItem.id}}">
             <div>
               <markdown [data]="ideaItem.description" class="text-sm text-gray-500"></markdown>
             </div>
