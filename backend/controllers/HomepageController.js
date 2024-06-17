@@ -18,7 +18,7 @@ export class HomepageController {
                 [sequelize.literal('SUM(upvotes + downvotes)'), 'total_votes']
             ],
             group: ['Idea.id'],
-            having: sequelize.literal('ABS(SUM(upvotes) - SUM(downvotes)) < 10'),
+            having: sequelize.literal('ABS(SUM(upvotes) - SUM(downvotes)) < 2'),
             order: sequelize.literal('total_votes DESC'),
             limit: 10,
             offset: (pageId - 1) * 10

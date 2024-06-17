@@ -11,23 +11,23 @@ export const routes: Routes = [
   {
     path: "home",
     component: HomepageComponent,
-    title: "Hivemind Angular App"
+    title: "Hivemind"
   }, {
     path: "login",
     component: LoginComponent,
-    title: "Login | Hivemind Angular App"
+    title: "Login | Hivemind"
   }, {
     path: "signup",
     component: SignupComponent,
-    title: "Sign up | Hivemind Angular App"
+    title: "Sign up | Hivemind"
   }, {
     path: "logout",
     component: LogoutComponent,
-    title: "Log out | Hivemind Angular App"
+    title: "Log out | Hivemind"
   }, {
     path: "ideas",
     component: IdeaPageComponent,
-    title: "My Ideas List | Hivemind Angular App",
+    title: "My Ideas List | Hivemind",
     canActivate: [authGuard]
   }, {
     path: "idea-details/:id",

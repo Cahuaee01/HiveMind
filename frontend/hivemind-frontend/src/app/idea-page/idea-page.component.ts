@@ -7,11 +7,12 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { IdeaItem } from '../_services/rest-backend/idea-item.type';
 import { MarkdownComponent } from 'ngx-markdown';
 import { MarkdownModule } from 'ngx-markdown';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-idea-page',
   standalone: true,
-  imports: [IdeaItemComponent, ReactiveFormsModule, MarkdownComponent],
+  imports: [IdeaItemComponent, ReactiveFormsModule, MarkdownComponent, CommonModule],
   templateUrl: './idea-page.component.html',
   styleUrl: './idea-page.component.scss'
 })
@@ -21,14 +22,23 @@ export class IdeaPageComponent {
   toastr = inject(ToastrService);
   router = inject(Router);
   ideas: IdeaItem[] = []; //array of IdeaItem
+  isModalOpen = false;
 
   newIdeaForm = new FormGroup({
     title: new FormControl('', [Validators.required]),
-    description: new FormControl('', [Validators.required])
+    description: new FormControl('', [Validators.required, Validators.maxLength(400)])
   })
   
   ngOnInit() {
     this.fetchIdeas();  
+  }
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
   }
 
   fetchIdeas(){

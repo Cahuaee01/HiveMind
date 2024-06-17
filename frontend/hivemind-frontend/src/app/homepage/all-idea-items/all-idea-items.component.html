@@ -1,4 +1,4 @@
-<li class="flex items-center flex-wrap content-between w-full px-10 py-5 border-b border-gray-200 rounded-t-lg mb-5">
+<li class="flex items-center flex-wrap content-between w-full px-10 py-5 border-b border-gray-200 rounded-t-lg mb-5 card">
   <div class="overflow-x-auto w-full">
     <table class="min-w-full divide-y divide-gray-200">
       <tbody class="bg-white divide-y divide-gray-200">
@@ -19,14 +19,14 @@
         </tr>
         <tr>
           <td class="px-6 py-6 whitespace-nowrap">
-            <button (click)="handleUpvote()" type="button" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
-              <img src="upvote.jpg" alt="Upvote Image" class="w-6 h-7">
+            <button (click)="handleUpvote()" type="button" class="flex items-center p-2 rounded-lg">
+              <img src="upvote.jpg" alt="Upvote Image" class="w-9 h-13 hover:animate-bounce">
               <span class="ml-2">{{ideaItem.upvotes}}</span>
             </button>
           </td>
           <td class="px-6 py-6 whitespace-nowrap text-right">
-            <button (click)="handleDownvote()" type="button" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
-              <img src="downvote.jpg" alt="Downvote Image" class="w-6 h-7">
+            <button (click)="handleDownvote()" type="button" class="flex items-center p-2 rounded-lg">
+              <img src="downvote.jpg" alt="Downvote Image" class="w-9 h-13 hover:animate-bounce">
               <span class="ml-2">{{ideaItem.downvotes}}</span>
             </button>
           </td>

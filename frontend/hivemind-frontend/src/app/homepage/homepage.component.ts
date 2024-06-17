@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [RouterLink, RouterLinkActive, AllIdeaItemsComponent, CommonModule],
   templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.scss'
+  styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent {
   restService = inject(RestBackendService);
@@ -23,14 +23,40 @@ export class HomepageComponent {
   currentFilter: number = 0;
   authService = inject(AuthService);
 
+  mybutton = document.getElementById("btn-back-to-top") as HTMLElement;
+
   ngOnInit(): void {
     this.fetchHomepage(this.currentFilter, this.currentPage);
+    this.mybutton.addEventListener("click", this.backToTop);
+    window.onscroll = () => this.scrollFunction();
+  }
+
+  scrollFunction(): void {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      this.mybutton.style.display = "block";
+    } else {
+      this.mybutton.style.display = "none";
+    }
+  }
+
+  backToTop(): void {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 
   fetchHomepage(filter: number, page: number): void {
     this.restService.getHomepage(filter, page).subscribe({
       next: (data) => {
-        this.homepageData = data as IdeaItem[];
+        const fetchedData = data as IdeaItem[];
+        if (fetchedData.length === 0 && page > 1) {
+          this.currentPage--;
+          this.toastr.error("No more items on the next page");
+        } else {
+          this.homepageData = fetchedData;
+        }
       },
       error: (err) => {
         this.toastr.error("Error fetching homepage data");
@@ -42,9 +68,11 @@ export class HomepageComponent {
   }
 
   prevPage(): void {
-    if (this.currentPage > 0) {
+    if (this.currentPage > 1) {
       this.currentPage--;
       this.fetchHomepage(this.currentFilter, this.currentPage);
+    } else {
+      this.toastr.error("Cannot go to previous page");
     }
   }
 
@@ -80,6 +108,4 @@ export class HomepageComponent {
       }
     });
   }
-  
 }
-

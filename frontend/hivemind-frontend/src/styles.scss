@@ -1,8 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+/*Tailwind*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/*Toaster*/
 @import 'ngx-toastr/toastr';
 
 .toast-success {
@@ -44,4 +45,32 @@ a.link {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+/*Card*/
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+/*Markdown*/
+.markdown-title {
+  width: 500px; 
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.markdown-description {
+  width: 500px; 
+  height: auto;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+/*Scroll to top*/
+#btn-back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: none;
 }
