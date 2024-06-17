@@ -21,7 +21,7 @@ import { MarkdownComponent } from 'ngx-markdown';
 export class IdeaDetailsComponent {
   comments: CommentItem[] = [];
   idea: IdeaItem = {} as IdeaItem;
-  id: number = 0;
+  id: number = 0 as number;
   createCommentSubmitted = false;
   restService = inject(RestBackendService);
   toastr = inject(ToastrService);

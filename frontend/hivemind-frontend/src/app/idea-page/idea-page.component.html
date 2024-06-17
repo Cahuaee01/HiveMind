@@ -27,7 +27,7 @@
 </section>
 
 <section class="flex-grow-0 w-auto">
-  <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 border-4 rounded-lg">
+  <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 border-4 rounded-lg  mb-10">
     @for(item of ideas; track item.id){
       <app-idea-item [ideaItem]="item" (delete)="handleDelete($event)"/>
     } @empty {

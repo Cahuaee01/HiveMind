@@ -22,11 +22,11 @@
           <tr>
             <td class="px-6 py-6 whitespace-nowrap" colspan="2">
               <div class="flex space-x-2 justify-center">
-                <button (click)="handleUpvote(idea.id!)" type="button" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
+                <button (click)="handleUpvote(id)" type="button" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
                   <img src="upvote.jpg" alt="Upvote Image" class="w-6 h-7">
                   {{idea.upvotes}}
                 </button>
-                <button (click)="handleDownvote(idea.id!)" type="button" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
+                <button (click)="handleDownvote(id)" type="button" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
                   <img src="downvote.jpg" alt="Downvote Image" class="w-6 h-7">
                   {{idea.downvotes}}
                 </button>

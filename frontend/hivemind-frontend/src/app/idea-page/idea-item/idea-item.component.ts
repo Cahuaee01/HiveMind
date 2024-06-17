@@ -14,9 +14,9 @@ import { MarkdownComponent } from 'ngx-markdown';
 })
 export class IdeaItemComponent {
   @Input({ required: true}) ideaItem: IdeaItem; //set "strictPropertyInitialization": false in tsconfig
-  @Output() delete: EventEmitter<number | undefined> = new EventEmitter();
-  @Output() upvote: EventEmitter<number | undefined> = new EventEmitter();
-  @Output() downvote: EventEmitter<number | undefined> = new EventEmitter();
+  @Output() delete: EventEmitter<number> = new EventEmitter();
+  @Output() upvote: EventEmitter<number> = new EventEmitter();
+  @Output() downvote: EventEmitter<number> = new EventEmitter();
   restBackend = inject(RestBackendService);
   toastr = inject(ToastrService);
 
@@ -44,7 +44,7 @@ export class IdeaItemComponent {
 
   handleUpvote(){
     if(this.ideaItem !== null){
-      this.restBackend.upvote(this.ideaItem.id!)
+      this.restBackend.upvote(this.ideaItem.id as number)
         .subscribe({
           next: (data) => {
             console.log(data);
@@ -59,7 +59,7 @@ export class IdeaItemComponent {
 
   handleDownvote(){
     if(this.ideaItem !== null){
-      this.restBackend.downvote(this.ideaItem.id!)
+      this.restBackend.downvote(this.ideaItem.id as number)
         .subscribe({
           next: (data) => {
             console.log(data);

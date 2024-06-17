@@ -23,28 +23,8 @@ export class HomepageComponent {
   currentFilter: number = 0;
   authService = inject(AuthService);
 
-  mybutton = document.getElementById("btn-back-to-top") as HTMLElement;
-
   ngOnInit(): void {
     this.fetchHomepage(this.currentFilter, this.currentPage);
-    this.mybutton.addEventListener("click", this.backToTop);
-    window.onscroll = () => this.scrollFunction();
-  }
-
-  scrollFunction(): void {
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      this.mybutton.style.display = "block";
-    } else {
-      this.mybutton.style.display = "none";
-    }
-  }
-
-  backToTop(): void {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
   }
 
   fetchHomepage(filter: number, page: number): void {
