@@ -27,7 +27,7 @@ export const routes: Routes = [
   }, {
     path: "ideas",
     component: IdeaPageComponent,
-    title: "My Ideas List | Hivemind",
+    title: "My Ideas | Hivemind",
     canActivate: [authGuard]
   }, {
     path: "idea-details/:id",

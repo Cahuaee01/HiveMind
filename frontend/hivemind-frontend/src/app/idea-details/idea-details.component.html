@@ -44,13 +44,13 @@
         <input type="text" formControlName="content" placeholder="Insert a new comment here" class="flex-grow p-2 mb-2 sm:mb-0 sm:mr-2 w-full bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500">
       </div>
       <div class="flex justify-end w-full">
-        <button type="submit" class="p-2 w-full sm:w-auto mt-2 sm:mt-0 text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:ring-teal-500 font-medium rounded-lg text-sm focus:outline-none mb-5">Share your comment</button>
+        <button type="submit" class="p-2 w-full sm:w-auto mt-2 sm:mt-0 text-white bg-blue-900 hover:bg-blue-300 focus:ring-4 focus:ring-teal-500 font-medium rounded-lg text-sm focus:outline-none mb-5">Share your comment</button>
       </div>
       @if(createCommentSubmitted && newCommentForm && newCommentForm.controls.content.errors && newCommentForm.controls.content.errors['required']){
         <p class="form-error w-full">Comment cannot be empty!</p>
       }
     </form>
-    <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg">
+    <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg mb-10 overflow-y-auto max-h-64">
       @for(item of comments; track item.id){
         <app-comment [comment]="item"/>
       } @empty {

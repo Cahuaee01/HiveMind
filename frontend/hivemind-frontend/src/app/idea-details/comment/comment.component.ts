@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { IdeaItem } from '../../_services/rest-backend/idea-item.type';
 import { CommentItem } from '../../_services/rest-backend/comment-item.type';
-import { Input, Output, EventEmitter, inject } from '@angular/core';
+import { Input,inject } from '@angular/core';
 import { RestBackendService } from '../../_services/rest-backend/rest-backend.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
@@ -15,12 +14,12 @@ import { Router } from '@angular/router';
 })
 export class CommentComponent {
   @Input({required : true}) comment: CommentItem;
-  restService = inject(RestBackendService);
   toastr = inject(ToastrService);
-  router = inject(Router);
+  commentDate: string = "";
 
   ngOnInit(){
     this.toastr.info("Loading comments");
+    this.commentDate = this.comment.createdAt?.toString() as string;
   }
 }
 

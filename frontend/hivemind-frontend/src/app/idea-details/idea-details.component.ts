@@ -84,6 +84,7 @@ export class IdeaDetailsComponent {
         },
         complete: () => {
           this.loadIdea();
+          this.loadComments();
           this.newCommentForm.value.content = ''; //reset input field
         }
       })
