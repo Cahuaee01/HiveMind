@@ -1,19 +1,21 @@
 <nav class="bg-[#e1750f] p-8">
-  <div class="mx-auto flex justify-between flex-wrap">  
-    <button (click)="toggle()" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-1 w-7 h-7 justify-center text-sm text-white rounded-lg md:hidden hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-900 mx-2" aria-controls="navbar-default" aria-expanded="false">
+  <div class="mx-auto flex flex-col">
+    <button (click)="toggle()" data-collapse-toggle="navbar-default" type="button" id="b1" class="inline-flex items-center p-1 w-7 h-7 justify-center text-sm text-white rounded-lg md:hidden mx-2 focus:bg-blue-900" aria-controls="navbar-default" aria-expanded="false">
       <span class="sr-only">Open main menu</span>
       <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
       </svg>
     </button>
-    <div>
-      <a routerLink="/home" class="flex items-center space-x-3 rtl:space-x-reverse flex-grow justify-end">
-        <img src="header.jpg" class="h-20" alt="Hivemind logo">
-        <img src="bee.jpg" class="h-20 floating" alt="Bee logo">
-      </a>  
-    </div>   
-    <div class="{{isOpen ? 'block' : 'hidden'}} w-full md:block md:w-auto" id="navbar-default">
-      <ul class="font-semibold flex flex-col p-4 md:p-5 mt-4 rounded-lg bg-blue-900 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-[#e1750f]">
+    <div class="flex justify-center items-center flex-wrap">
+      <div>
+        <a routerLink="/home" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="header.jpg" class="h-20" alt="Hivemind logo">
+          <img src="bee.jpg" class="h-20 floating" alt="Bee logo">
+        </a>
+      </div>
+    </div>
+    <div class="{{isOpen ? 'block' : 'hidden'}} w-full md:block md:w-auto mt-4 md:mt-0" id="navbar-default">
+      <ul class="font-semibold flex justify-center items-center flex-wrap p-4 md:p-5 rounded-lg bg-blue-900 md:flex-row md:space-x-8 rtl:space-x-reverse md:border-0 md:bg-[#e1750f]">
         <li>
           <a (click)="handleNavigationClick()" routerLink="/home" routerLinkActive="text-[#011d82]" class="block py-2 px-3 text-white rounded md:bg-transparent hover:bg-white hover:text-blue-300 md:hover:bg-transparent md:border-0 md:p-0">Home</a>
         </li>

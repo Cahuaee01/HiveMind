@@ -28,7 +28,7 @@ a.link {
 }
 
 .toast-top-right {
-  top: 50px;
+  top: 130px;
   right: 30px;
   margin-top: 100px;
 }
@@ -96,6 +96,24 @@ a.link {
   0% { transform: translate(0,  0px); }
   50%  { transform: translate(0, 15px); }
   100%   { transform: translate(0, -0px); }    
+}
+
+#flybee {
+  position: absolute;
+  top: 50%; /* Posizionamento verticale centrato */
+  transform: translateY(-50%); /* Per centrare l'immagine verticalmente */
+  width: 100px; /* Larghezza dell'immagine */
+  height: auto; /* Altezza proporzionale */
+  animation: moveFromRightToLeft 3s linear forwards, floating 3s ease-in-out infinite; /* Animazione */
+}
+
+@keyframes moveFromRightToLeft {
+  0% {
+    right: -100px; /* Posizione iniziale fuori dallo schermo a destra */
+  }
+  100% {
+    right: 100vw; /* Posizione finale fuori dallo schermo a sinistra */
+  }
 }
 
   

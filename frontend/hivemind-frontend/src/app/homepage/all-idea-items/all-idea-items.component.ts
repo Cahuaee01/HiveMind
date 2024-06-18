@@ -4,11 +4,12 @@ import { RestBackendService } from '../../_services/rest-backend/rest-backend.se
 import { ToastrService } from 'ngx-toastr';
 import { IdeaItem } from '../../_services/rest-backend/idea-item.type';
 import { MarkdownComponent } from 'ngx-markdown';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-all-idea-items',
   standalone: true,
-  imports: [RouterLink, MarkdownComponent],
+  imports: [RouterLink, MarkdownComponent, CommonModule],
   templateUrl: './all-idea-items.component.html',
   styleUrl: './all-idea-items.component.scss'
 })
@@ -18,6 +19,7 @@ export class AllIdeaItemsComponent {
   @Output() downvote: EventEmitter<number | undefined> = new EventEmitter();
   restBackend = inject(RestBackendService);
   toastr = inject(ToastrService);
+  showImage = false;
 
   ngOnInit(){
   }
@@ -29,6 +31,11 @@ export class AllIdeaItemsComponent {
           next: (data) => {
             console.log(data);
             this.ideaItem.upvotes!++;
+            this.showImage = true; 
+
+            setTimeout(() => {
+              this.showImage = false;
+            }, 4000);
           },
           error: (err) => {
             this.toastr.error("Error when upvoting the idea");

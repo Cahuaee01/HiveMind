@@ -16,6 +16,23 @@ export class NavbarComponent {
   
   authService = inject(AuthService);
 
+  ngOnInit(){
+    document.addEventListener('DOMContentLoaded', function() {
+      let isFocused = false;
+      const button = document.getElementById('b1');
+      isFocused = false;
+  
+      button?.addEventListener('click', function() {
+        if(isFocused){
+          button.blur();
+          isFocused = false;
+        } else {
+          button.focus();
+          isFocused = true;
+        }});
+    });
+  }
+
   /**
    * Handles user click on the navbar menu toggle on small screens
    */
