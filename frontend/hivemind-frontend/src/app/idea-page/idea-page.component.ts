@@ -23,6 +23,7 @@ export class IdeaPageComponent {
   router = inject(Router);
   ideas: IdeaItem[] = []; //array of IdeaItem
   isModalOpen = false;
+  windowScrolled = false;
 
   newIdeaForm = new FormGroup({
     title: new FormControl('', [Validators.required]),
@@ -31,6 +32,13 @@ export class IdeaPageComponent {
   
   ngOnInit() {
     this.fetchIdeas();  
+    window.addEventListener('scroll', () => {
+      this.windowScrolled = window.pageYOffset !== 0;
+    });
+  }
+
+  scrollToTop(): void {
+    window.scrollTo(0, 0);
   }
 
   openModal() {

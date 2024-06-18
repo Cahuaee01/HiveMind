@@ -22,9 +22,17 @@ export class HomepageComponent {
   currentPage: number = 1;
   currentFilter: number = 0;
   authService = inject(AuthService);
+  windowScrolled = false;
 
   ngOnInit(): void {
     this.fetchHomepage(this.currentFilter, this.currentPage);
+    window.addEventListener('scroll', () => {
+      this.windowScrolled = window.pageYOffset !== 0;
+    });
+  }
+
+  scrollToTop(): void {
+    window.scrollTo(0, 0);
   }
 
   fetchHomepage(filter: number, page: number): void {
@@ -51,6 +59,7 @@ export class HomepageComponent {
     if (this.currentPage > 1) {
       this.currentPage--;
       this.fetchHomepage(this.currentFilter, this.currentPage);
+      this.scrollToTop();
     } else {
       this.toastr.error("Cannot go to previous page");
     }
@@ -59,6 +68,7 @@ export class HomepageComponent {
   nextPage(): void {
     this.currentPage++;
     this.fetchHomepage(this.currentFilter, this.currentPage);
+    this.scrollToTop();
   }
 
   handleUpvote(id: number): void {

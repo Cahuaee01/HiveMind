@@ -28,7 +28,7 @@ a.link {
 }
 
 .toast-top-right {
-  top: 45px;
+  top: 50px;
   right: 30px;
   margin-top: 100px;
 }
@@ -67,3 +67,35 @@ a.link {
   white-space: pre-wrap;
 }
 
+/*Scroll to top*/
+.to-top {
+  bottom: 0;
+  cursor: pointer;
+  margin: 0 8px 12px 0;
+  position: fixed;
+  right: 0;
+  opacity: 0;
+}
+
+.show-scrollTop {
+  opacity: 1 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+/*Bee*/
+.floating {  
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); }    
+}
+
+  
