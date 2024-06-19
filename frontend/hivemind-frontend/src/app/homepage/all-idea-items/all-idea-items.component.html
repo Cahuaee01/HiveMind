@@ -5,21 +5,22 @@
       <tbody class="bg-white divide-y divide-gray-200">
         <tr>
           <td class="px-6 py-4 whitespace-nowrap" colspan="2">
-            <div routerLink="/idea-details/${{ideaItem.id}}" class="text-lg font-bold text-teal-600">&#64;{{ideaItem.UserUserName}}</div>
-          </td>
-        </tr>
-        <tr routerLink="/idea-details/${{ideaItem.id}}">
-          <img src="idea.png" class="h-10 mt-2">
-          <td class="px-6 py-4 whitespace-nowrap" colspan="2">
-            <markdown [data]="ideaItem.title" class="text-sm font-medium text-gray-900"></markdown>
+            <div routerLink="/idea-details/${{ideaItem.id}}" class="flex items-center justify-between font-bold text-teal-600">&#64;{{ideaItem.UserUserName}}
+              <img src="idea.png" class="h-10 mt-2 ml-10">
+            </div>
           </td>
         </tr>
         <tr routerLink="/idea-details/${{ideaItem.id}}">
           <td class="px-6 py-4 whitespace-nowrap" colspan="2">
-            <markdown [data]="ideaItem.description" class="text-sm text-gray-500"></markdown>
+            <markdown [data]="ideaItem.title" class="markdown-title overflow-wrap break-word font-medium text-gray-900"></markdown>
           </td>
         </tr>
-        <tr>
+        <tr routerLink="/idea-details/${{ideaItem.id}}">
+          <td class="px-6 py-4 whitespace-nowrap" colspan="2">
+            <markdown [data]="ideaItem.description" class="markdown-description overflow-wrap break-word word-break:break-all text-gray-500"></markdown>
+          </td>
+        </tr>
+        <tr class="flex space-x-2 justify-center">
           <td class="px-6 py-6 whitespace-nowrap">
             <button (click)="handleUpvote()" type="button" class="flex items-center p-2 rounded-lg">
               <img src="upvote.png" alt="Upvote Image" class="w-9 h-13 hover:animate-bounce">
