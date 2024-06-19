@@ -14,7 +14,7 @@
     </div>
     <div class="flex flex-col sm:flex-row sm:items-center w-full">
       <textarea type="text" formControlName="description" placeholder="Insert description" class="flex-grow p-2 mb-2 sm:mb-0 sm:mr-2 w-full bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 overflow-wrap break-word"></textarea>
-      <markdown [data]="newIdeaForm.controls.description.value" class="hover:animate-pulse markdown-description flex-grow p-2 mb-2 sm:mb-0 sm:mr-2 w-full bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 overflow-wrap break-word">Visualizing markdown preview here...
+      <markdown [data]="newIdeaForm.controls.description.value" class="hover:animate-pulse markdown-description flex-grow p-2 mb-2 sm:mb-0 sm:mr-2 w-full bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 overflow-wrap break-word word-break:break-all">Visualizing markdown preview here...
       </markdown>
     </div>
     <div class="flex justify-end w-full">

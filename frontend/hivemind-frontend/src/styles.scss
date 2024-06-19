@@ -104,7 +104,7 @@ a.link {
   transform: translateY(-50%); /* Per centrare l'immagine verticalmente */
   width: 100px; /* Larghezza dell'immagine */
   height: auto; /* Altezza proporzionale */
-  animation: moveFromRightToLeft 3s linear forwards, floating 3s ease-in-out infinite; /* Animazione */
+  animation: moveFromRightToLeft 3s linear forwards; /* Animazione */
 }
 
 @keyframes moveFromRightToLeft {
