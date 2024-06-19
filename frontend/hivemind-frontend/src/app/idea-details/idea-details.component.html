@@ -1,22 +1,23 @@
 <section class="m-4">
-  <li class="flex items-center flex-wrap content-between w-full px-10 py-5 border-b border-gray-200 rounded-t-lg mb-5">
+  <li class="flex items-center flex-wrap content-between min-w-[600px] w-full mx-auto px-10 py-5 border-b border-gray-200 rounded-t-lg mb-5">
     <div class="overflow-x-auto w-full">
-      <table class="min-w-full divide-y divide-gray-200">
-        <tbody class="bg-white divide-y divide-gray-200">
+      <table class="min-w-full divide-y divide-gray-200 bg-image">
+        <tbody class="divide-y divide-gray-200">
           <tr>
             <td class="px-6 py-4 whitespace-nowrap" colspan="2">
-              <div class="text-lg font-bold text-teal-600">&#64;{{idea.UserUserName}}</div>
-            </td>
-          </tr>
-          <tr>
-            <img src="idea.png" class="h-10 mt-2">
-            <td class="px-6 py-4 whitespace-nowrap">
-              <markdown [data]="idea.title" class="text-sm font-medium text-gray-900"></markdown>
+              <div class="text-lg font-bold text-teal-600 flex items-center justify-between">&#64;{{idea.UserUserName}}
+                <img src="idea.png" class="h-10 mt-2">
+              </div>
             </td>
           </tr>
           <tr>
             <td class="px-6 py-4 whitespace-nowrap">
-              <markdown [data]="idea.description" class="text-sm text-gray-500"></markdown>
+              <markdown [data]="idea.title" class="markdown-title font-medium text-gray-900 overflow-wrap break-word word-break break-all"></markdown>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <markdown [data]="idea.description" class="markdown-description text-gray-500 overflow-wrap break-word word-break break-all"></markdown>
             </td>
             <td class="px-6 py-4 whitespace-nowrap"></td>
           </tr>

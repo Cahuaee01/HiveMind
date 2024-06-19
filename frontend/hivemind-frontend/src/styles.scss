@@ -100,7 +100,7 @@ a.link {
 
 #flybee {
   position: absolute;
-  top: 50%; /* Posizionamento verticale centrato */
+  top: 100%; /* Posizionamento verticale centrato */
   transform: translateY(-50%); /* Per centrare l'immagine verticalmente */
   width: 100px; /* Larghezza dell'immagine */
   height: auto; /* Altezza proporzionale */
@@ -118,7 +118,16 @@ a.link {
 
 /*Table*/ //not working
 .bg-image {
-  background-image: url('/frontend/hivemind-frontend/public/ideabg.jpg');
+  background-image: url('/ideabg.jpg');
+  background-size: cover; /* Copre l'intera area della tabella */
+  background-position: center; /* Centra l'immagine */
+  background-repeat: no-repeat; /* Evita che l'immagine si ripeta */
+}
+
+.bg-image th,
+.bg-image td {
+  background-color: rgba(255, 255, 255, 0.8); /* Sfondo semitrasparente per il testo */
+  padding: 8px; /* Padding interno delle celle */
 }
 
   

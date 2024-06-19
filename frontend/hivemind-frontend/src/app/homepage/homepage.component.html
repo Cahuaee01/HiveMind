@@ -26,20 +26,6 @@
             </button>
         </div>
     </div>
-
-    <div class="flex justify-between mt-4">
-    <button (click)="prevPage()"
-        class="px-4 py-2 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
-        type="button">
-        Previous Page
-    </button>
-    <span class="font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle">{{currentPage}}</span>
-    <button (click)="nextPage()"
-        class="px-4 py-2 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
-        type="button">
-        Next Page
-    </button>
-    </div>
     
     <ng-container *ngFor="let item of homepageData">
         <app-all-idea-items [ideaItem]="item" (upvote)="handleUpvote($event!)" (downvote)="handleDownvote($event!)"/>

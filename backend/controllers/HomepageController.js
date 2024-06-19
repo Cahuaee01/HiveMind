@@ -3,7 +3,7 @@ import { sequelize } from '../public/sequelize.js';
 
 export class HomepageController {
 
-    //if upvotes and downvotes have 10 votes of range between them then the idea is considered controversial
+    //if upvotes and downvotes have 2 votes of range between them then the idea is considered controversial
     static async displayTenControversial(pageId,req) {
         return Idea.findAll({
             attributes: [

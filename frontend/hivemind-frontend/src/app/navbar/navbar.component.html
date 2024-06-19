@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="{{isOpen ? 'block' : 'hidden'}} w-full md:block md:w-auto mt-4 md:mt-0" id="navbar-default">
-      <ul class="font-semibold flex justify-center items-center flex-wrap p-4 md:p-5 rounded-lg bg-blue-900 md:flex-row md:space-x-8 rtl:space-x-reverse md:border-0 md:bg-[#e1750f]">
+      <ul class="font-semibold flex justify-center items-center flex-wrap p-4 md:p-5 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:border-0 md:bg-[#e1750f]">
         <li>
           <a (click)="handleNavigationClick()" routerLink="/home" routerLinkActive="text-[#011d82]" class="block py-2 px-3 text-white rounded md:bg-transparent hover:bg-white hover:text-blue-300 md:hover:bg-transparent md:border-0 md:p-0">Home</a>
         </li>
@@ -31,7 +31,7 @@
           </li>
         }@else{
           <li>
-            <a (click)="handleNavigationClick()" routerLink="/logout" routerLinkActive="text-[#011d82]" class="block py-2 px-3 text-white rounded md:bg-transparent hover:bg-white hover:text-blue-300 md:hover:bg-transparent md:border-0 md:p-0">Welcome, {{this.authService.user()}} &#8617;</a>
+            <a (click)="handleNavigationClick()" routerLink="/logout" routerLinkActive="text-[#011d82]" class="block py-2 px-3 text-white rounded md:bg-transparent hover:bg-white hover:text-blue-300 md:hover:bg-transparent md:border-0 md:p-0">Logout &#8617;</a>
           </li>
         }
       </ul>
