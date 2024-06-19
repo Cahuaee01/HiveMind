@@ -1,5 +1,6 @@
 import { Idea } from "../models/Database.js";
 import { sequelize } from '../public/sequelize.js';
+import { Op } from 'sequelize';
 
 export class HomepageController {
 
@@ -35,12 +36,16 @@ export class HomepageController {
                 'upvotes',
                 'downvotes',
                 'UserUserName',
-                [sequelize.fn('SUM', sequelize.col('upvotes')), 'total_upvotes'],
                 [sequelize.fn('SUM', sequelize.col('downvotes')), 'total_downvotes'],
                 [sequelize.literal('SUM(upvotes - downvotes)'), 'total_votes']
             ],
             group: ['Idea.id'],
-            order: sequelize.literal('total_votes ASC'),
+            where: {
+                createdAt: {
+                    [Op.gte]: new Date(new Date() - 7 * 24 * 60 * 60 * 1000)
+                }
+            },
+            order: sequelize.literal('total_downvotes DESC'),
             limit: 10,
             offset: (pageId - 1) * 10
         });
@@ -57,11 +62,15 @@ export class HomepageController {
                 'downvotes',
                 'UserUserName',
                 [sequelize.fn('SUM', sequelize.col('upvotes')), 'total_upvotes'],
-                [sequelize.fn('SUM', sequelize.col('downvotes')), 'total_downvotes'],
                 [sequelize.literal('SUM(upvotes - downvotes)'), 'total_votes']
             ],
             group: ['Idea.id'],
-            order: sequelize.literal('total_votes DESC'),
+            where: {
+                createdAt: {
+                    [Op.gte]: new Date(new Date() - 7 * 24 * 60 * 60 * 1000)
+                }
+            },
+            order: sequelize.literal('total_upvotes DESC'),
             limit: 10,
             offset: (pageId - 1) * 10
         });
