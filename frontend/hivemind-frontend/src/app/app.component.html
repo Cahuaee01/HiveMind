@@ -1,7 +1,21 @@
-<div class="flex flex-col h-screen">
-  <app-navbar class="sticky top-0"/>
-  <main class="mx-auto flex-grow">
-    <router-outlet></router-outlet>
-  </main>
-  <app-footer/>
+<div class="flex flex-col min-h-screen">
+  <div class="area">
+    <app-navbar class="mynav sticky top-0"/>
+    <main class="mx-auto flex-grow">
+      <router-outlet></router-outlet>
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </main>
+    <app-footer/>
+  </div>
 </div>

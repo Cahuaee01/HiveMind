@@ -1,7 +1,7 @@
 <section class="m-4">
-  <li class="flex items-center flex-wrap content-between min-w-[600px] w-full mx-auto px-10 py-5 border-b border-gray-200 rounded-t-lg mb-5">
+  <li class="flex items-center flex-wrap content-between min-w-[600px] w-full mx-auto px-10 py-5 border-b border-gray-200 rounded-t-lg mb-5 card">
     <div class="overflow-x-auto w-full">
-      <table class="min-w-full divide-y divide-gray-200 bg-image">
+      <table class="min-w-full divide-y divide-gray-200 ">
         <tbody class="divide-y divide-gray-200">
           <tr>
             <td class="px-6 py-4 whitespace-nowrap" colspan="2">
@@ -40,19 +40,19 @@
     </div>
   </li>
 </section>  
-<section>
+<section class="max-w-[500px] flex flex-col items-center justify-center mx-auto">
   <form [formGroup]="newCommentForm" (ngSubmit)="handleCommentSubmit()" class="space-y-4">
       <div class="flex flex-col sm:flex-row sm:items-center w-full">
         <input type="text" formControlName="content" placeholder="Insert a new comment here" class="flex-grow p-2 mb-2 sm:mb-0 sm:mr-2 w-full bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500">
       </div>
-      <div class="flex justify-end w-full">
+      <div class="flex justify-center w-full">
         <button type="submit" class="p-2 w-full sm:w-auto mt-2 sm:mt-0 text-white bg-blue-900 hover:bg-blue-300 focus:ring-4 focus:ring-teal-500 font-medium rounded-lg text-sm focus:outline-none mb-5">Share your comment</button>
       </div>
       @if(createCommentSubmitted && newCommentForm && newCommentForm.controls.content.errors && newCommentForm.controls.content.errors['required']){
         <p class="form-error w-full">Comment cannot be empty!</p>
       }
     </form>
-    <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg mb-10 overflow-y-auto max-h-64">
+    <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg mb-10 overflow-y-auto max-h-64 overflow-wrap break-word word-break break-all">
       @for(item of comments; track item.id){
         <app-comment [comment]="item"/>
       } @empty {

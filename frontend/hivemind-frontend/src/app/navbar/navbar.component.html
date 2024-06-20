@@ -1,4 +1,4 @@
-<nav class="bg-[#e1750f] p-8">
+<nav class="bg-blue-900 p-8">
   <div class="mx-auto flex flex-col">
     <button (click)="toggle()" data-collapse-toggle="navbar-default" type="button" id="b1" class="inline-flex items-center p-1 w-7 h-7 justify-center text-sm text-white rounded-lg md:hidden mx-2 focus:bg-blue-900" aria-controls="navbar-default" aria-expanded="false">
       <span class="sr-only">Open main menu</span>
@@ -9,13 +9,13 @@
     <div class="flex justify-center items-center flex-wrap">
       <div>
         <a routerLink="/home" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="header.jpg" class="h-20" alt="Hivemind logo">
-          <img src="bee.jpg" class="h-20 floating" alt="Bee logo">
+          <img src="header.png" class="h-20" alt="Hivemind logo">
+          <img src="beenobg.png" class="h-20 floating" alt="Bee logo">
         </a>
       </div>
     </div>
     <div class="{{isOpen ? 'block' : 'hidden'}} w-full md:block md:w-auto mt-4 md:mt-0" id="navbar-default">
-      <ul class="font-semibold flex justify-center items-center flex-wrap p-4 md:p-5 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:border-0 md:bg-[#e1750f]">
+      <ul class="font-semibold flex justify-center items-center flex-wrap p-4 md:p-5 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:border-0 md:bg-blue-900">
         <li>
           <a (click)="handleNavigationClick()" routerLink="/home" routerLinkActive="text-[#011d82]" class="block py-2 px-3 text-white rounded md:bg-transparent hover:bg-white hover:text-blue-300 md:hover:bg-transparent md:border-0 md:p-0">Home</a>
         </li>

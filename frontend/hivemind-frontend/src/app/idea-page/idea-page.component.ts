@@ -22,7 +22,6 @@ export class IdeaPageComponent {
   toastr = inject(ToastrService);
   router = inject(Router);
   ideas: IdeaItem[] = []; //array of IdeaItem
-  isModalOpen = false;
   windowScrolled = false;
 
   newIdeaForm = new FormGroup({
@@ -39,14 +38,6 @@ export class IdeaPageComponent {
 
   scrollToTop(): void {
     window.scrollTo(0, 0);
-  }
-
-  openModal() {
-    this.isModalOpen = true;
-  }
-
-  closeModal() {
-    this.isModalOpen = false;
   }
 
   fetchIdeas(){
