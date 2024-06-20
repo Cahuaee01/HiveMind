@@ -77,15 +77,10 @@ a.link {
 
 /*Markdown*/
 .markdown-title {
-  width: 500px; 
-  overflow-x: auto;
-  white-space: nowrap;
+  white-space: pre-wrap;
 }
 
 .markdown-description {
-  width: 500px; 
-  height: auto;
-  overflow-x: auto;
   white-space: pre-wrap;
 }
 
@@ -189,7 +184,7 @@ a.link {
   width: 20px;
   height: 20px;
   background: rgba(255, 255, 255, 0.2);
-  animation: animate 300s linear infinite; /* Durata aumentata a 100s */
+  animation: animate 10000s linear infinite; /* Durata aumentata a 100s */
   bottom: -150px;
 }
 
