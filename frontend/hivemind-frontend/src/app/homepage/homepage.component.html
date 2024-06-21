@@ -28,7 +28,7 @@
     </div>
     
     <ng-container *ngFor="let item of homepageData">
-        <app-all-idea-items [ideaItem]="item" (upvote)="handleUpvote($event!)" (downvote)="handleDownvote($event!)"/>
+        <app-all-idea-items [ideaItem]="item" (upvote)="handleUpvote($event)" (downvote)="handleDownvote($event)"/>
     </ng-container>
    
     <div class="flex justify-around place-items-center content-between t-4">

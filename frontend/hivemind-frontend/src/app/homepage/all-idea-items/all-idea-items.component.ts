@@ -26,16 +26,11 @@ export class AllIdeaItemsComponent {
 
   handleUpvote(){
     if(this.ideaItem !== null){
-      this.restBackend.upvote(this.ideaItem.id!)
+      this.restBackend.upvote(this.ideaItem.id as number)
         .subscribe({
           next: (data) => {
             console.log(data);
             this.ideaItem.upvotes!++;
-            this.showImage = true; 
-
-            setTimeout(() => {
-              this.showImage = false;
-            }, 4000);
           },
           error: (err) => {
             this.toastr.error("Error when upvoting the idea");
@@ -46,7 +41,7 @@ export class AllIdeaItemsComponent {
 
   handleDownvote(){
     if(this.ideaItem !== null){
-      this.restBackend.downvote(this.ideaItem.id!)
+      this.restBackend.downvote(this.ideaItem.id as number)
         .subscribe({
           next: (data) => {
             console.log(data);

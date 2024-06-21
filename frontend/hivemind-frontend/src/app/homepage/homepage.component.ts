@@ -71,31 +71,15 @@ export class HomepageComponent {
     this.scrollToTop();
   }
 
-  handleUpvote(id: number): void {
-    this.restService.upvote(id).subscribe({
-      next: (data) => {
-        console.log(data);
-      },
-      error: (err) => {
-        this.toastr.error("Error upvoting idea");
-      },
-      complete: () => {
-        this.toastr.info("Idea upvoted");
-      }
-    });
+  handleUpvote(id: number | undefined): void {
+    console.log("UPVOTE HERE");
+    console.log(id);
+    this.toastr.success("Upvoted the idea");
   }
 
-  handleDownvote(id: number): void {
-    this.restService.downvote(id).subscribe({
-      next: (data) => {
-        console.log(data);
-      },
-      error: (err) => {
-        this.toastr.error("Error downvoting idea");
-      },
-      complete: () => {
-        this.toastr.info("Idea downvoted");
-      }
-    });
+  handleDownvote(id: number | undefined): void {
+    console.log("DOWNVOTE HERE");
+    console.log(id);
+    this.toastr.success("Downvoted the idea");
   }
 }

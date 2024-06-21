@@ -55,6 +55,7 @@ export class IdeaItemComponent {
             setTimeout(() => {
               this.showImage = false;
             }, 4000);
+            this.toastr.success("Upvoted the idea");
           },
           error: (err) => {
             this.toastr.error("Error when upvoting the idea");
@@ -70,6 +71,7 @@ export class IdeaItemComponent {
           next: (data) => {
             console.log(data);
             this.ideaItem.downvotes!++;
+            this.toastr.success("Downvoted the idea");
           },
           error: (err) => {
             this.toastr.error("Error when downvoting the idea");
