@@ -7,7 +7,7 @@ import { AuthController } from "../controllers/AuthController.js";
  * @param {Function} next - The next middleware function.
  * @returns {Promise<void>} - A Promise that resolves when the middleware is complete.
  */
-export async function ensureUsersVoteOnlyOneTime(req, next){
+export async function ensureUsersVoteOnlyOneTime(req, res, next){
     const user = req.username;
     const ideaId = req.params.id;
     const userCanUpvote = await AuthController.canUserVoteIdea(user, ideaId);
