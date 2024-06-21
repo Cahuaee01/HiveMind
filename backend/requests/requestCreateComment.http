@@ -1,8 +1,0 @@
-POST http://localhost:3000/ideas/1/comments
-Content-Type: application/json 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZW1pbGlhIiwiaWF0IjoxNzE2MTk3MjY2LCJleHAiOjE3MTYyODM2NjZ9.An1LvxiBu3-7OSlYadxvZbyoXo9f6nKPcC8vSUTlBRA
-
-{
-  "content": "Mi piace"
-}
-

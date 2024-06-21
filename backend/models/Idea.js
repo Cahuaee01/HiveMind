@@ -1,3 +1,7 @@
+/**
+ * Creates a Sequelize model for the Idea entity.
+ * @param {object} database - The Sequelize database instance.
+ */
 import { DataTypes } from "sequelize";
 
 export function createModel(database){
@@ -21,7 +25,6 @@ export function createModel(database){
       type: DataTypes.INTEGER,
       defaultValue: 0
     }
-    //by default, Sequelize adds the createdAt and updatedAt fields to all models
   }, {
     
   })

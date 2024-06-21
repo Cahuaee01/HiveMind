@@ -6,6 +6,15 @@ import { createModel as createCommentModel } from "./Comment.js";
 
 import 'dotenv/config.js'; //read .env file and make it available in process.env
 
+/**
+ * Represents the database module.
+ * @module Database
+ */
+
+/**
+ * The Sequelize instance representing the database connection.
+ * @type {Sequelize}
+ */
 export const database = new Sequelize(process.env.DB_CONNECTION_URI, {
   dialect: process.env.DIALECT
 });
@@ -15,7 +24,11 @@ createIdeaModel(database);
 createVoteModel(database);
 createCommentModel(database);
 
-export const {User, Idea, Vote, Comment} = database.models;
+/**
+ * The User model.
+ * @type {import("./User.js").UserModel}
+ */
+export const { User, Idea, Vote, Comment } = database.models;
 
 //associations configuration
 User.Idea = User.hasMany(Idea);
@@ -31,8 +44,8 @@ Idea.Comment = Idea.hasMany(Comment);
 Comment.Idea = Comment.belongsTo(Idea);
 
 //synchronize schema (creates missing tables)
-database.sync().then( () => {
+database.sync().then(() => {
   console.log("Database synced correctly");
-}).catch( err => {
+}).catch(err => {
   console.err("Error with database synchronization: " + err.message);
 });

@@ -1,6 +1,9 @@
+/**
+ * Creates a model for the User table in the database.
+ * @param {object} database - The Sequelize database instance.
+ */
 import { DataTypes } from "sequelize";
 import { createHash } from "crypto";
-
 
 export function createModel(database) {
   database.define('User', {
@@ -21,8 +24,7 @@ export function createModel(database) {
         this.setDataValue('password', hash.update(value).digest("hex"));
       }
     }
-  }, { // Other model options go here
-    //the actual table name is inferred from the model name (pluralized) by default
+  }, { 
   });
 }
 

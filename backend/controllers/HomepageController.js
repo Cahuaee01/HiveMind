@@ -2,10 +2,18 @@ import { Idea } from "../models/Database.js";
 import { sequelize } from '../public/sequelize.js';
 import { Op } from 'sequelize';
 
+/**
+ * Controller for handling homepage related operations.
+ */
 export class HomepageController {
 
-    //if upvotes and downvotes have 2 votes of range between them then the idea is considered controversial
-    static async displayTenControversial(pageId,req) {
+    /**
+     * Retrieves the ten most controversial ideas.
+     * @param {number} pageId - The page number.
+     * @param {Object} req - The request object.
+     * @returns {Promise<Idea[]>} - A promise that resolves to an array of Idea objects.
+     */
+    static async displayTenControversial(pageId, req) {
         return Idea.findAll({
             attributes: [
                 'id',

@@ -1,2 +1,0 @@
-GET http://localhost:3000/homepage/controversial/0
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZW1pbGlhIiwiaWF0IjoxNzE3NjA0Njg4LCJleHAiOjE3MTc2OTEwODh9.rHAP8LF6m0FRIxaF5fba2rTQZDXi8OHJeVhXKNc0-qY

@@ -1,6 +1,13 @@
 import { DataTypes } from "sequelize";
 
-export function createModel(database){
+/**
+ * Creates a model for the Comment entity.
+ * @param {object} database - The Sequelize database instance.
+ */
+export function createModel(database) {
+  /**
+   * Comment model definition.
+   */
   database.define('Comment', {
     id: {
       type: DataTypes.INTEGER,
@@ -13,7 +20,6 @@ export function createModel(database){
     owner: {
       type: DataTypes.TEXT
     }
-    //by default, Sequelize adds the createdAt and updatedAt fields to all models
   }, {
 
   })

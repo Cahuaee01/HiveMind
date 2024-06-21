@@ -1,9 +1,0 @@
-POST http://localhost:3000/ideas
-Content-Type: application/json 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZW1pbGlhIiwiaWF0IjoxNzE2NjQ3MDYzLCJleHAiOjE3MTY3MzM0NjN9.K9P6_YpIzxj5riTifgtdabBVa7aZZVeVPAwBUSQs3rY
-
-{
-  "title": "Terza",
-  "description": "non voglio sia popolare"
-}
-

@@ -1,35 +1,12 @@
 import express from "express";
 import { AuthController } from "../controllers/AuthController.js";
 
-export const authenticationRouter = express.Router();
-
 /**
- * @swagger
- *  /auth:
- *    post:
- *      description: Authenticate user
- *      produces:
- *        - application/json
- *      requestBody:
- *        description: user credentials to authenticate
- *        required: true
- *        content:
- *          application/json:
- *            schema:
- *              type: object
- *              properties:
- *                usr:
- *                  type: string
- *                  example: Kyle
- *                pwd:
- *                  type: string
- *                  example: p4ssw0rd
- *      responses:
- *        200:
- *          description: User authenticated
- *        401:
- *          description: Invalid credentials
+ * Router module for handling authentication routes.
+ * @module authenticationRouter
  */
+
+export const authenticationRouter = express.Router();
 
 authenticationRouter.post("/login", async (req, res) => {
   let isAuthenticated = await AuthController.checkCredentials(req, res);
