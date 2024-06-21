@@ -12,12 +12,12 @@
         </tr>
         <tr routerLink="/idea-details/${{ideaItem.id}}">
           <td class="px-6 py-4 whitespace-nowrap" colspan="2">
-            <markdown [data]="ideaItem.title" class="markdown-title overflow-wrap break-word word-break break-all font-medium text-gray-900"></markdown>
+            <markdown [data]="ideaItem.title" class="markdown-title  font-medium text-gray-900"></markdown>
           </td>
         </tr>
         <tr routerLink="/idea-details/${{ideaItem.id}}">
           <td class="px-6 py-4 whitespace-nowrap" colspan="2">
-            <markdown [data]="ideaItem.description" class="markdown-description overflow-wrap break-word word-break break-all text-gray-500"></markdown>
+            <markdown [data]="ideaItem.description" class="markdown-description  text-gray-500"></markdown>
           </td>
         </tr>
         <tr class="flex space-x-2 justify-center">

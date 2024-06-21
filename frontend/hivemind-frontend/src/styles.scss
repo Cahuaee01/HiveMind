@@ -78,10 +78,16 @@ a.link {
 /*Markdown*/
 .markdown-title {
   white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .markdown-description {
   white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 /*Scroll to top*/

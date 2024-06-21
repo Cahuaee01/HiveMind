@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './all-idea-items.component.scss'
 })
 export class AllIdeaItemsComponent {
-  @Input({ required: true}) ideaItem : IdeaItem; //set "strictPropertyInitialization": false in tsconfig
+  @Input({ required: true}) ideaItem : IdeaItem; //"strictPropertyInitialization": false in tsconfig
   @Output() upvote: EventEmitter<number | undefined> = new EventEmitter();
   @Output() downvote: EventEmitter<number | undefined> = new EventEmitter();
   restBackend = inject(RestBackendService);

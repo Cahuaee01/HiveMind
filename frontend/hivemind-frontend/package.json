@@ -19,8 +19,6 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
-    "@syncfusion/ej2-angular-richtexteditor": "^26.1.35",
-    "emoji-toolkit": "^8.0.0",
     "jwt-decode": "^4.0.0",
     "ngx-markdown": "^18.0.0",
     "ngx-toastr": "^19.0.0",
