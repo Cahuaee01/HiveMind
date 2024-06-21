@@ -20,7 +20,7 @@
 }
 
 a.link {
-  @apply underline text-teal-600 hover:text-teal-700 visited:text-teal-800 
+  @apply underline text-teal-600 hover:text-teal-700 visited:text-teal-800 shadow-xl
 }
 
 .form-error{
@@ -44,6 +44,14 @@ a.link {
     width: 300px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+/*Button filter*/
+@media (max-width: 640px) {
+  .btn-con, .btn-main, .btn-unpop {
+    font-size: 0.625rem;
+    padding: 0.5rem 0.75rem; 
   }
 }
 

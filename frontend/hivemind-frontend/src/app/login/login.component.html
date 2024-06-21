@@ -8,7 +8,7 @@
               <form class="space-y-4 md:space-y-6" [formGroup]="loginForm" (ngSubmit)="handleLogin()">
                   <div>
                       <label for="user" class="block mb-2 text-sm font-medium text-white">Your username</label>
-                      <input type="text" formControlName="user" id="user" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" placeholder="Your username" required="">
+                      <input type="text" formControlName="user" id="user" class="bg-gray-50 border border-blue-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" placeholder="Your username" required="">
                       @if(submitted && loginForm.controls.user.errors){
                         @if(loginForm.controls.user.errors['required']){
                           <p class="form-error">Username is required.</p>
@@ -17,7 +17,7 @@
                     </div>
                     <div>
                       <label for="pass" class="block mb-2 text-sm font-medium text-white">Password</label>
-                      <input type="password" formControlName="pass" id="pass" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" required="">
+                      <input type="password" formControlName="pass" id="pass" placeholder="••••••••" class="bg-gray-50 border border-blue-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" required="">
                       @if(submitted && loginForm.controls.pass.errors){
                         @if(loginForm.controls.pass.errors['required']){
                           <p class="form-error">Password is required.</p>
@@ -27,7 +27,7 @@
                         }
                       }
                     </div>
-                  <button type="submit" class="w-full text-white bg-blue-900 hover:bg-blue-300 rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+                  <button type="submit" class="w-full text-white bg-blue-400 hover:bg-blue-300 rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
                   <p class="text-sm font-medium text-gray-500">
                       Don't have an account yet? <a routerLink="/signup" class="link">Sign up</a>
                   </p>
