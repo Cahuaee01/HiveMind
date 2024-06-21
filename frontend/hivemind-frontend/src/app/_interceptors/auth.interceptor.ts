@@ -2,6 +2,7 @@ import { inject } from '@angular/core';
 import { HttpRequest, HttpHandlerFn } from '@angular/common/http';
 import { AuthService } from '../_services/auth/auth.service';
 
+// Interceptor to add the Authorization header with the token to the request
 
 export function authInterceptor(request: HttpRequest<unknown>, next: HttpHandlerFn) {
   const authService = inject(AuthService);

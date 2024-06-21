@@ -1,3 +1,4 @@
+// Purpose: Interface for the IdeaItem type.
 export interface IdeaItem {
     id?: number; 
     title: string; 

@@ -2,6 +2,8 @@ import { Injectable, WritableSignal, computed, effect, signal } from '@angular/c
 import { jwtDecode } from "jwt-decode";
 import { AuthState } from './auth-state.type';
 
+// Service to manage the authentication state of the user
+
 @Injectable({
   providedIn: 'root'
 })

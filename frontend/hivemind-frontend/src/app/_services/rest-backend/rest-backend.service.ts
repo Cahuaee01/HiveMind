@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { IdeaItem } from './idea-item.type';
 import { AuthRequest } from './auth-request.type';
 
+// Service for making HTTP requests to the backend REST API.
+
 @Injectable({
   providedIn: 'root'
 })
 export class RestBackendService {
 
   url = "http://localhost:3000" 
-  //url = "http://192.168.1.15:3000"
   constructor(private http: HttpClient) {}
 
   httpOptions = {
@@ -55,12 +56,6 @@ export class RestBackendService {
   createIdea(idea: IdeaItem){
     const url = `${this.url}/ideas`;
     return this.http.post<IdeaItem>(url, idea, this.httpOptions);
-  }
-
-  update(ideaItem: IdeaItem) {
-    const url = `${this.url}/ideas/${ideaItem.id}`; 
-    console.log(ideaItem);
-    return this.http.put<IdeaItem>(url, ideaItem, this.httpOptions);
   }
 
   delete(ideaItem: IdeaItem) {
