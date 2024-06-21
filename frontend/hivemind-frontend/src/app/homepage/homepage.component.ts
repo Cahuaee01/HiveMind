@@ -7,6 +7,8 @@ import { IdeaItem } from '../_services/rest-backend/idea-item.type';
 import { AllIdeaItemsComponent } from './all-idea-items/all-idea-items.component';
 import { CommonModule } from '@angular/common';
 
+// Homepage component that displays all the ideas on the homepage
+
 @Component({
   selector: 'app-homepage',
   standalone: true,

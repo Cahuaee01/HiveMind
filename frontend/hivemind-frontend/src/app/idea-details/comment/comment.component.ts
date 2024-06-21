@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommentItem } from '../../_services/rest-backend/comment-item.type';
-import { Input,inject } from '@angular/core';
+import { Input } from '@angular/core';
+
+// Component that displays a single comment
 
 @Component({
   selector: 'app-comment',

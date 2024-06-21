@@ -6,8 +6,11 @@ import { IdeaItemComponent } from './idea-item/idea-item.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IdeaItem } from '../_services/rest-backend/idea-item.type';
 import { MarkdownComponent } from 'ngx-markdown';
-import { MarkdownModule } from 'ngx-markdown';
 import { CommonModule } from '@angular/common';
+
+// Component that displays the idea page
+// This component is responsible for displaying the idea page
+// and handling the creation of new ideas
 
 @Component({
   selector: 'app-idea-page',

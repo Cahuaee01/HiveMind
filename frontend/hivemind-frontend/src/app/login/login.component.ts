@@ -5,6 +5,8 @@ import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { AuthService } from '../_services/auth/auth.service';
 import { RestBackendService } from '../_services/rest-backend/rest-backend.service';
 
+// Component that displays the login form
+
 @Component({
   selector: 'app-login',
   standalone: true,

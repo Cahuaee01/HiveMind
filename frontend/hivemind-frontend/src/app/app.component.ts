@@ -4,6 +4,10 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
+// Main component of the application
+// Contains the navbar and footer components
+// Contains the router outlet for routing
+
 @Component({
   selector: 'app-root',
   standalone: true,

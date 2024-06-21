@@ -3,6 +3,8 @@ import { AuthService } from '../_services/auth/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
+// Component that logs out the user
+
 @Component({
   selector: 'app-logout',
   standalone: true,

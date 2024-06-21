@@ -6,6 +6,8 @@ import { IdeaItem } from '../../_services/rest-backend/idea-item.type';
 import { MarkdownComponent } from 'ngx-markdown';
 import { CommonModule } from '@angular/common';
 
+// Component that displays a single idea item on the My Ideas page
+
 @Component({
   selector: 'app-idea-item',
   standalone: true,

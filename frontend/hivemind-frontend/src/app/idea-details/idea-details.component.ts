@@ -9,6 +9,8 @@ import { CommentComponent } from './comment/comment.component';
 import { ActivatedRoute } from '@angular/router';
 import { MarkdownComponent } from 'ngx-markdown';
 
+// Component that displays the details of a single idea item
+// It also allows to post a comment for the idea item
 
 @Component({
   selector: 'app-idea-details',

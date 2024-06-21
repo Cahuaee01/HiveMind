@@ -4,6 +4,8 @@ import { Router, RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { RestBackendService } from '../_services/rest-backend/rest-backend.service';
 
+// Component that displays the signup form
+
 @Component({
   selector: 'app-signup',
   standalone: true,
