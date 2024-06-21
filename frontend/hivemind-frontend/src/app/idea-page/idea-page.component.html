@@ -20,7 +20,8 @@
         <markdown [data]="newIdeaForm.controls.description.value" class="hover:animate-pulse markdown-description flex-grow p-2 mb-2 sm:mb-0 sm:mr-2 w-full bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 overflow-wrap break-word word-break:break-all">Visualizing markdown preview here...
         </markdown>
       </div>
-    <div class="flex justify-end w-full">
+    <div class="flex flex-col justify-between sm:flex-row sm-items-center w-full">
+      <p class="text-white">{{newIdeaForm.get('description')?.value?.length || 0}}/400</p>
       <button type="submit" class="p-2 w-full sm:w-auto mt-2 sm:mt-0 text-white bg-blue-900 hover:bg-blue-300 focus:ring-4 focus:ring-teal-500 font-medium rounded-lg text-sm focus:outline-none mb-5">Share your Idea</button>
     </div>
     @if(createIdeaSubmitted && newIdeaForm && newIdeaForm.controls.title.errors && newIdeaForm.controls.title.errors['required'] && newIdeaForm.controls.description.errors && newIdeaForm.controls.description.errors['required']){

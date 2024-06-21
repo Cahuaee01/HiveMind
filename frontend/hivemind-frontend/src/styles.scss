@@ -128,7 +128,8 @@ a.link {
   transform: translateY(-50%); /* Per centrare l'immagine verticalmente */
   width: 100px; /* Larghezza dell'immagine */
   height: auto; /* Altezza proporzionale */
-  animation: moveFromRightToLeft 3s linear forwards; /* Animazione */
+  z-index: 100;
+  animation: moveFromRightToLeft 3s linear forwards, floating 3s linear infinite; /* Animazione */
 }
 
 @keyframes moveFromRightToLeft {
@@ -138,19 +139,6 @@ a.link {
   100% {
     right: 100vw; /* Posizione finale fuori dallo schermo a sinistra */
   }
-}
-
-/*Table*/ //not working
-.bg-image {
-  background-image: url('/ideabg.jpg');
-  background-size: cover; /* Copre l'intera area della tabella */
-  background-position: center; /* Centra l'immagine */
-}
-
-.bg-image th,
-.bg-image td {
-  background-color: rgba(255, 255, 255, 0.8); /* Sfondo semitrasparente per il testo */
-  padding: 8px; /* Padding interno delle celle */
 }
 
 /*Animated bg*/

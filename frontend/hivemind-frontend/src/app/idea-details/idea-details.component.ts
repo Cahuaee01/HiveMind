@@ -95,6 +95,7 @@ export class IdeaDetailsComponent {
     this.restService.upvote(id).subscribe({
       next: (data) => {
         console.log(data);
+        this.idea.upvotes!++;
       },
       error: (err) => {
         this.toastr.error("Error upvoting idea");
@@ -109,6 +110,7 @@ export class IdeaDetailsComponent {
     this.restService.downvote(id).subscribe({
       next: (data) => {
         console.log(data);
+        this.idea.downvotes!++;
       },
       error: (err) => {
         this.toastr.error("Error downvoting idea");
