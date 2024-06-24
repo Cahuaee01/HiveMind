@@ -14,8 +14,12 @@ Questo comando installerà tutte le dipendenze necessarie per il backend del pro
 
 ### Avvio del Backend
 Per avviare il backend, segui questi passi:
+1. Assicurati di essere nella directory `backend`.
+2. Esegui il seguente comando: `npm start`.
+
+Oppure, dopo aver impostato il frontend:
 1. Assicurati di essere nella directory `frontend/hivemind-frontend`.
-2. Esegui il seguente comando: _npm run backend_
+2. Esegui il seguente comando: `npm run backend`.
 Questo comando avvia il server backend utilizzando Node.js e Express.
 
 ## Frontend
@@ -30,7 +34,7 @@ Questo comando installerà tutte le dipendenze necessarie per il frontend del pr
 ### Avvio del Frontend
 Per avviare il frontend, segui questi passi:
 1. Assicurati di essere nella directory `frontend/hivemind-frontend`.
-2. Esegui il seguente comando: _npm start_
+2. Esegui il seguente comando: `npm start`.
 Questo comando avvia l'applicazione frontend Angular.
 
 ### Tecnologie Utilizzate

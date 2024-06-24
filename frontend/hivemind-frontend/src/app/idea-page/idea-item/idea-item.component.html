@@ -1,6 +1,5 @@
-<li class="flex items-center flex-wrap content-between w-full max-w-3xl mx-auto px-10 py-5 border-b border-gray-200 rounded-t-lg">
+<li class="flex items-center flex-wrap content-between w-full max-w-3xl mx-auto px-10 py-5 border-b border-gray-200 rounded-t-lg hover:shadow-xl">
   <div class="overflow-x-auto w-full">
-    <img *ngIf="showImage" src="beenobg.png" id="flybee" class="floating z-10">
     <table class="min-w-full divide-y divide-gray-200 ">
       <tbody class="divide-y divide-gray-200">
         <tr>
@@ -29,11 +28,11 @@
           <td class="px-6 py-6 whitespace-nowrap" colspan="2">
             <div class="flex space-x-2 justify-center">
               <button (click)="handleUpvote()" type="button" class="flex items-center p-2 rounded-lg">
-                <img src="upvote.png" alt="Upvote Image" class="w-9 h-13 hover:animate-bounce">
+                <img src="upvote.png" alt="Upvote Image" class="w-9 h-13">
                 {{ideaItem.upvotes}}
               </button>
               <button (click)="handleDownvote()" type="button" class="flex items-center p-2 rounded-lg">
-                <img src="downvote.png" alt="Downvote Image" class="w-9 h-13 hover:animate-bounce">
+                <img src="downvote.png" alt="Downvote Image" class="w-9 h-13">
                 {{ideaItem.downvotes}}
               </button>
             </div>

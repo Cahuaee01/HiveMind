@@ -93,6 +93,8 @@ export class AuthController {
       }
     });
 
-    return vote === null;
+    const userIsOwner = idea.UserUserName === user;
+
+    return vote === null && !userIsOwner;
   }
 }

@@ -22,7 +22,6 @@ export class IdeaItemComponent {
   @Output() downvote: EventEmitter<number> = new EventEmitter();
   restBackend = inject(RestBackendService);
   toastr = inject(ToastrService);
-  showImage = false;
 
 
   ngOnInit(){
@@ -53,10 +52,6 @@ export class IdeaItemComponent {
           next: (data) => {
             console.log(data);
             this.ideaItem.upvotes!++;
-            this.showImage = true; 
-            setTimeout(() => {
-              this.showImage = false;
-            }, 4000);
             this.toastr.success("Upvoted the idea");
           },
           error: (err) => {

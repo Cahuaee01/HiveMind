@@ -22,17 +22,17 @@ export class HomepageController {
                 'upvotes',
                 'downvotes',
                 'UserUserName',
-                [sequelize.literal('SUM(upvotes - downvotes)'), 'total_votes']
+                [sequelize.literal('SUM(upvotes) - SUM(downvotes)'), 'total_votes']
             ],
             group: ['Idea.id'],
+            order: [[sequelize.literal('ABS(SUM(upvotes) - SUM(downvotes)) ASC')],
+                    [sequelize.literal('total_votes DESC')]
+            ], 
             where: {
                 createdAt: {
                     [Op.gte]: new Date(new Date() - 7 * 24 * 60 * 60 * 1000)
                 }
             },
-            order: [[sequelize.literal('ABS(SUM(upvotes) - SUM(downvotes)) ASC')],
-                    [sequelize.literal('total_votes DESC')]
-            ], 
             limit: 10,
             offset: (pageId - 1) * 10
         });

@@ -130,24 +130,25 @@ a.link {
   100%   { transform: translate(0, -0px); }    
 }
 
-#flybee {
-  position: absolute;
-  top: 100%; 
-  transform: translateY(-50%); 
-  width: 100px; 
-  height: auto; 
-  z-index: 100;
-  animation: moveFromRightToLeft 3s linear forwards, floating 3s linear infinite; 
-}
+// For future development
+// #flybee {
+//   position: absolute;
+//   top: 100%; 
+//   transform: translateY(-50%); 
+//   width: 100px; 
+//   height: auto; 
+//   z-index: 100;
+//   animation: moveFromRightToLeft 3s linear forwards, floating 3s linear infinite; 
+// }
 
-@keyframes moveFromRightToLeft {
-  0% {
-    right: -100px;
-  }
-  100% {
-    right: 100vw; 
-  }
-}
+// @keyframes moveFromRightToLeft {
+//   0% {
+//     right: -100px;
+//   }
+//   100% {
+//     right: 100vw; 
+//   }
+// }
 
 /*Animated bg*/
 .area {

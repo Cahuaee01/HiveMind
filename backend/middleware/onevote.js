@@ -17,7 +17,7 @@ export async function ensureUsersVoteOnlyOneTime(req, res, next){
     } else {
       next({
         status: 403, 
-        message: "Forbidden! You can only upvote once!"
+        message: "Forbidden! You can only upvote other ideas once!"
       });
     }   
   }

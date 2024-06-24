@@ -32,8 +32,8 @@
   
 </section>
 
-<section>
-  <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 border-4 rounded-lg">
+<section class="flex items-center justify-center place-items-center">
+  <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 border-4 rounded-lg max-w-[800px]">
     @for(item of ideas; track item.id){
       <app-idea-item [ideaItem]="item" (delete)="handleDelete($event)"/>
     } @empty {
