@@ -114,6 +114,15 @@ a.link {
   transition: all 0.2s ease-in-out;
 }
 
+/*Upvote and downvote*/
+.selectUpvote:hover {
+  filter: drop-shadow(1px 1px 20px green);
+}
+
+.selectDownvote:hover {
+  filter: drop-shadow(1px 1px 20px red);
+}
+
 /*Bee*/
 .floating {  
   animation-name: floating;

@@ -24,12 +24,12 @@
           <tr>
             <td class="px-6 py-6 whitespace-nowrap" colspan="2">
               <div class="flex space-x-2 justify-center">
-                <button (click)="handleUpvote(id)" type="button" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
-                  <img src="upvote.png" alt="Upvote Image" class="w-9 h-13 hover:animate-bounce">
+                <button (click)="handleUpvote(id)" type="button" class="selectUpvote flex items-center p-2 rounded-lg">
+                  <img src="upvote.png" alt="Upvote Image" class="w-9 h-13 hover:animate-bounce mr-2">
                   {{idea.upvotes}}
                 </button>
-                <button (click)="handleDownvote(id)" type="button" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
-                  <img src="downvote.png" alt="Downvote Image" class="w-9 h-13 hover:animate-bounce">
+                <button (click)="handleDownvote(id)" type="button" class="selectDownvote flex items-center p-2 rounded-lg">
+                  <img src="downvote.png" alt="Downvote Image" class="w-9 h-13 hover:animate-bounce mr-2">
                   {{idea.downvotes}}
                 </button>
               </div>
