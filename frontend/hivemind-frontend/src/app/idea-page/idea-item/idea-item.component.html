@@ -3,16 +3,12 @@
     <table class="min-w-full divide-y divide-gray-200 ">
       <tbody class="divide-y divide-gray-200">
         <tr>
-          <td class="px-6 py-4 whitespace-nowrap" routerLink="/idea-details/${{ideaItem.id}}">
-            <div>
-              <markdown [data]="ideaItem.title" class="markdown-title font-medium text-gray-900"></markdown>
-            </div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap text-right">
-            <div class="inline-flex rounded-md shadow-sm text-xs">
-              <button (click)="handleDelete()" type="button" class="px-4 py-1 font-medium text-gray-900 bg-transparent border border-gray-900 hover:bg-red-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-red-900 focus:text-white">
+          <td class="py-4 whitespace-nowrap">
+            <div class="flex items-center justify-between w-full rounded-md text-xs">
+              <button (click)="handleDelete()" type="button" class="px-4 py-1 mr-3 font-medium text-gray-900 bg-transparent border border-gray-900 rounded hover:bg-red-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-red-900 focus:text-white">
                 Delete
               </button>
+              <markdown routerLink="/idea-details/${{ideaItem.id}}" [data]="ideaItem.title" class="markdown-title font-medium text-gray-900"></markdown>
             </div>
           </td>
         </tr>
@@ -28,11 +24,11 @@
           <td class="px-6 py-6 whitespace-nowrap" colspan="2">
             <div class="flex space-x-2 justify-center">
               <button (click)="handleUpvote()" type="button" class="flex items-center p-2 rounded-lg">
-                <img src="upvote.png" alt="Upvote Image" class="w-9 h-13">
+                <img src="upvote.png" alt="Upvote Image" title="Cannot upvote your own idea :C" class="w-9 h-13 mr-2">
                 {{ideaItem.upvotes}}
               </button>
               <button (click)="handleDownvote()" type="button" class="flex items-center p-2 rounded-lg">
-                <img src="downvote.png" alt="Downvote Image" class="w-9 h-13">
+                <img src="downvote.png" alt="Downvote Image" title="Cannot downvote your own idea :C" class="w-9 h-13 mr-2">
                 {{ideaItem.downvotes}}
               </button>
             </div>
